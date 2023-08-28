@@ -6,7 +6,7 @@ export const urls = {
         whyHelp: {name: "Dlaczego pomagamy", url: "/#dlaczego-pomagamy"},
         aboutUs: {name: "O nas", url: "/o-nas"},
         download: {name: "Do pobrania", url: "/do-pobrania"},
-        kontakt: {name: "Kontakt", url: "kontakt"}
+        kontakt: {name: "Kontakt", url: "#kontakt"}
     },
     carousel: [
         {url: "dla-parafii"},
