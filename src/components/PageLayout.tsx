@@ -9,7 +9,8 @@ const PageLayout:React.FC<Props> = ({children, bg, title}) =>{
     const bgVariants = {
         'o-programie': 'bg-o-programie',
         'materialy': 'bg-materialy',
-        'o-nas': 'bg-o-nas'
+        'o-nas': 'bg-o-nas',
+        'dla-parafii': 'bg-dla-parafii'
     }
 
     return(

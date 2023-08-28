@@ -1,4 +1,3 @@
-import Button from "@/components/Button"
 import PageLayout from "@/components/PageLayout"
 import Image from "next/image"
 

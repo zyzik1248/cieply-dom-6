@@ -49,6 +49,12 @@ iframe::-webkit-scrollbar {
     margin-bottom: 12px;
 }
 
+.ul-secondary li{
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 12px;
+}
+
 .ul-primary li::before{
     content: "";
     position: absolute;
@@ -58,6 +64,18 @@ iframe::-webkit-scrollbar {
     top: 6px;
     border-radius: 50%;
     transform: translate(-200%);
+}
+
+.ul-secondary li::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #18813F;
+    top: 6px;
+    border-radius: 50%;
+    transform: translate(-200%);
+    background-color: transparent;
 }
 
 .flt_svg {
