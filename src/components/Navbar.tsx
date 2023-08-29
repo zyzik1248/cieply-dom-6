@@ -8,10 +8,12 @@ import { useEffect, useState } from "react"
 import Loop from "./Loop"
 import Link from "next/link"
 import { getNavList } from "@/utilis/urls"
+import { usePathname } from "next/navigation"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isScroll, setScroll] = useState(false)
+    const pathname = usePathname()
 
     const setOpen = () => {
         setIsOpen(!isOpen)
@@ -28,6 +30,10 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [])
+
+    useEffect(()=>{
+        setIsOpen(false)
+    }, [pathname])
 
     return (
         <div className={`${isScroll ? "drop-shadow-lg" : ""} ${isOpen ? "min-h-[450px]" : "min-h-0"} z-10 bg-green w-full py-normal px-big fixed transition-all duration-300 overflow-hidden`}>
