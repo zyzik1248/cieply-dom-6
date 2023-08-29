@@ -10,7 +10,8 @@ const PageLayout:React.FC<Props> = ({children, bg, title}) =>{
         'o-programie': 'bg-o-programie',
         'materialy': 'bg-materialy',
         'o-nas': 'bg-o-nas',
-        'dla-parafii': 'bg-dla-parafii'
+        'dla-parafii': 'bg-dla-parafii',
+        "dla-parafian" : "bg-dla-parafian"
     }
 
     return(

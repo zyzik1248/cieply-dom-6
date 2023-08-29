@@ -5,7 +5,7 @@ const ForParish = () => {
     return (
         <PageLayout bg="dla-parafii" title="Dla Parafii">
             <div>
-                <p className="font-bold text-base sm:text-lg m-0">"Potrzebna jest dziś nowa « wyobraźnia miłosierdzia», której przejawem będzie nie tyle i nie tylko skuteczność pomocy, ale zdolność bycia bliźnim dla cierpiącego człowieka, solidaryzowania się z nim, tak aby gest pomocy nie był odczuwany jako poniżająca jałmużna, ale jako świadectwo braterskiej wspólnoty dóbr." JPII</p>
+                <p className="font-bold text-base sm:text-lg m-0">"Potrzebna jest dziś nowa « wyobraźnia miłosierdzia», której przejawem będzie nie tyle i nie tylko skuteczność pomocy, ale zdolność bycia bliźnim dla cierpiącego człowieka, solidaryzowania się z nim, tak aby gest pomocy nie był odczuwany jako poniżająca jałmużna, ale jako świadectwo braterskiej wspólnoty dóbr." <br></br><span className="text-sm sm:text-base">JPII</span></p>
                 <p className="text-base sm:text-lg m-0 mt-8">Projekt “Ciepły Dom - Ciepły Kościół” w swojej najgłębszej istocie ma być działaniem wspólnototwórczym, uruchamiającym tzw “wyobraźnię miłosierdzia” (Jan Paweł II) w trosce o członków naszej wspólnoty w okresie jesienno-zimowym. Wzmacniamy relacje między wiernymi i duchowieństwem, by przeciwdziałać ubóstwu - w tym przypadku energetycznemu. Budujemy sieć wzajemnie się inspirujących i będących ze sobą w kontakcie Parafialnych Zespołów Solidarności Energetycznej, które angażując wiernych świeckich i duchowieństwo (w duchu synodalnym) mają wspólnie rozeznawać i działać, rozwiązując problemy parafii i parafian. </p>
             </div>
             <div>

@@ -30,7 +30,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className={`${isScroll ? "drop-shadow-lg" : ""} ${isOpen ? "min-h-[420px]" : "min-h-0"} z-10 bg-green w-full py-normal px-big fixed transition-all duration-300 overflow-hidden`}>
+        <div className={`${isScroll ? "drop-shadow-lg" : ""} ${isOpen ? "min-h-[450px]" : "min-h-0"} z-10 bg-green w-full py-normal px-big fixed transition-all duration-300 overflow-hidden`}>
             <nav className="max-w-normal flex justify-between m-auto relative">
                 <Link className="flex items-center" href={"/"}>
                     <Image src="/logo-CDCK-white.png" alt="logo" width={96} height={32} />
@@ -43,7 +43,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex justify-center items-center gap-[15px]">
                     <Loop />
-                    <Link href="https://docs.google.com/forms/d/1R1nBXq7ZECw6b3keFJBv2EzBMaOpgIxSXvgjaTPecF8/edit">
+                    <Link rel="noopener noreferrer" target="_blank" href="https://forms.gle/SgNYSAgmgFTwLgTh7">
                         <Button text="DZIAŁAJ Z NAMI" />
                     </Link>
                     <Hamburger isOpen={isOpen} setOpen={setOpen} />
