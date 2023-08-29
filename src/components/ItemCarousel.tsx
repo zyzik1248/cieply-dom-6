@@ -12,7 +12,7 @@ const ItemCarousel:React.FC<Props> = ({url}) =>{
     }
 
     return(
-        <div className={`relative ${(bgVariants as any)[url]} bg-cover pb-[60%] sm:pb-[33%]`}>
+        <div className={`relative ${(bgVariants as any)[url]} bg-cover pb-[59%] sm:pb-[50%]`}>
         </div>
     )
 }

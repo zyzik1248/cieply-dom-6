@@ -14,8 +14,8 @@ const About = () => {
                     We wspólnocie wierzących możemy razem zadbać o ciepłe domy i ciepłe kościoły!
                     </p>
                 </div>
-                <div className="flex-1 relative m-auto mt-7 w-[170px] h-[170px] sm:w-[350px] sm:h-[350px]">
-                    <Image alt="elipse" src='/ellipse.png' layout="fill" objectFit='contain' />
+                <div className="relative m-auto mt-7 w-[250px] h-[250px] sm:flex-1 sm:w-[400px] sm:h-[400px]">
+                    <Image className="h-full" alt="world enviroment" src='/world-enviroment.png' layout="fill" objectFit='contain' />
                 </div>
             </div>
             <div className="max-w-[1000px] w-full m-auto">

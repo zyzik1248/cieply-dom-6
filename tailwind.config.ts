@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'dla-parafii': "url('/rec1.png')",
-        'dla-parafian': "url('/rec1.png')",
+        'dla-parafii': "url('/church.jpg')",
+        'dla-parafian': "url('/catolics.jpg')",
         'poradnik': "url('/rec1.png')",
         'dobre-przyklady': "url('/rec1.png')",
         'audyt-i-dotacje': "url('/rec1.png')",
-        'o-programie': "url('/rec2.png')",
+        'o-programie': "url('/green-energy.jpg')",
         'do-pobrania': "url('/rec2.png')",
-        'o-nas': "url('/rec2.png')",
-        'material': "url('/rec3.png')"
+        'o-nas': "url('/earth.jpg')",
+        'materialy': "url('/notebook2.jpg')"
       },
       backgroundColor: {
         "yellow-light" : "#FFD646",

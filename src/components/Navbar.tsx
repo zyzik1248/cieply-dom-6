@@ -35,11 +35,11 @@ const Navbar = () => {
                 <Link className="flex items-center" href={"/"}>
                     <Image src="/logo-CDCK-white.png" alt="logo" width={96} height={32} />
                 </Link>
-                <div className={`absolute w-full top-[70px] transition-all duration-300 md:w-fit md:relative md:top-0`}>
-                    <ul className={`m-0 md:flex md:gap-4 md:items-center`}>
+                <div className={`absolute w-full top-[70px] transition-all duration-300 xl:w-fit xl:relative xl:top-0`}>
+                    <ul className={`m-0 xl:flex xl:gap-4 xl:items-center`}>
                         {getNavList().map((nav, id) => <Nav key={id} {...nav} />)}
                     </ul>
-                    <div className="h-[0.5px] bg-white w-100 opacity-50 mt-4 md:hidden"></div>
+                    <div className="h-[0.5px] bg-white w-100 opacity-50 mt-4 xl:hidden"></div>
                 </div>
                 <div className="flex justify-center items-center gap-[15px]">
                     <Loop />

@@ -8,8 +8,10 @@ interface Matrial{
 export interface MaterialQuery{
     name: string
     id: string
-    assets: {
+    asset: {
         id:string
+        url:string
+        preview:string
     }
 }
 

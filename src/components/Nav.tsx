@@ -13,7 +13,7 @@ const Nav: React.FC<Props> = ({name, url}) =>{
     const isActive =  pathname === url
 
     return(
-        <li className={`${isActive ? "" : ""} text-white text-base relative font-bold py-normal md:py-normal md:text-center`}>
+        <li className={`${isActive ? "" : ""} text-white text-base relative font-bold py-normal xl:py-normal xl:text-center`}>
             <Link className='py-normal' passHref href={url}>{name}</Link>
         </li>
     )
