@@ -1,8 +1,7 @@
-interface Matrial{
-    id: string
-    preview: string
+export interface SearchPage{
     name: string
-    asset: string
+    slug: string
+    description: string
 }
 
 export interface MaterialQuery{
@@ -12,11 +11,5 @@ export interface MaterialQuery{
         id:string
         url:string
         preview:string
-    }
-}
-
-interface MaterialsQuery{
-    data: {
-        material: MaterialQuery[]
     }
 }

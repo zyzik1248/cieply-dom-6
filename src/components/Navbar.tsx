@@ -36,7 +36,7 @@ const Navbar = () => {
     }, [pathname])
 
     return (
-        <div className={`${isScroll ? "drop-shadow-lg" : ""} ${isOpen ? "min-h-[450px]" : "min-h-0"} z-10 bg-green w-full py-normal px-big fixed transition-all duration-300 overflow-hidden`}>
+        <div className={`${isScroll ? "drop-shadow-lg" : ""} ${isOpen ? "min-h-[450px]" : "min-h-0"} xl:min-h-0 z-10 bg-green w-full py-normal px-big fixed transition-all duration-300 overflow-hidden`}>
             <nav className="max-w-normal flex justify-between m-auto relative">
                 <Link className="flex items-center" href={"/"}>
                     <Image src="/logo-CDCK-white.png" alt="logo" width={96} height={32} />

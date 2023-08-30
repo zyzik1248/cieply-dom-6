@@ -4,7 +4,7 @@ import Partners from "@/components/Partners"
 import ShortAbout from "@/components/ShortAbout"
 import Why from "@/components/Why"
 
-const Home = () => {
+const Home = async () => {
   return (
     <div className="pt-[50px]">
       <section className="mb-24 px-big sm:px-0">
