@@ -11,6 +11,7 @@ export const urls = {
     links:{
         audyt: {name: "Audyt i termomodernizacja", url: "audyt-i-termomodernizacja"},
         guideParish: {name: "Poradnik dla parafii", url: "poradnik-dla-parafii"},
+        guideParishioners: {name: "Poradnik dla parafian", url: "poradnik-dla-parafian"},
         examples: {name: "Przykłady realizacji", url: "przyklady-realizacji"},
     },
     carousel: [
