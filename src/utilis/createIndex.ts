@@ -10,6 +10,7 @@ export function createIndex(html: string){
     const h4 = loader('main h4').text();
     const h5 = loader('main h5').text();
     const h6 = loader('main h6').text();
-    const text = `${p} ${h1} ${h2} ${h3} ${h4} ${h5} ${h6} ${span}`;
+    const div = loader('main div').text();
+    const text = `${p} ${h1} ${h2} ${h3} ${h4} ${h5} ${h6} ${span} ${div}`;
     return text
 }
