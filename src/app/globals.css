@@ -44,19 +44,20 @@ iframe::-webkit-scrollbar {
     display: none;
 }
 
-.ul-primary li{
+.ul-primary li, .news-wrapper li{
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 12px;
+    padding-right: 30px;
+}
+
+.ul-secondary li, .news-wrapper li{
     position: relative;
     margin-left: 30px;
     margin-bottom: 12px;
 }
 
-.ul-secondary li{
-    position: relative;
-    margin-left: 30px;
-    margin-bottom: 12px;
-}
-
-.ul-primary li::before{
+.ul-primary li::before, .news-wrapper li::before{
     content: "";
     position: absolute;
     width: 8px;
@@ -89,4 +90,20 @@ iframe::-webkit-scrollbar {
 .box_parent
 {
     filter: url('#flt_tag');
+}
+
+.news-wrapper p{
+    margin-bottom: 24px;
+}
+
+.news-wrapper img{
+    max-width: 1000px;
+    margin: auto;
+    width: 100%;
+}
+
+.news-wrapper a{
+    text-decoration: underline;
+    color: #18813F;
+    font-weight: bold;
 }

@@ -1,17 +1,10 @@
-export interface SearchPage{
-    name: string
-    slug: string
-    description: string
-}
-
 export interface IndexQuery{
     id: string
     name: string
     description: string
     slug: string
-    content: {
-        text: string
-    }
+    content: string
+    longSlug: string
 }
 
 export interface MaterialQuery{
@@ -34,11 +27,11 @@ export interface NewsQuery{
         html: string
         text: string
     }
-    imagePreview: {
-        id:string
-        url:string
+    content: {
+        html: string
+        text: string
     }
-    image: {
+    imagePreview: {
         id:string
         url:string
     }

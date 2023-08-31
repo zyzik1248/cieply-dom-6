@@ -5,7 +5,7 @@ import { IndexQuery } from "@/types";
 const fuseOptions = {
   all: false,
   threshold: -10000000,
-  keys: ["content.text", "title", "description"]
+  keys: ["content", "title", "description"]
   
 };
 

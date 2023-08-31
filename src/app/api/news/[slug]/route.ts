@@ -23,14 +23,14 @@ export async function GET(
                 postedDate
                 slug
                 description {
+                    html
+                    text
+                }
+                content {
                   html
                   text
                 }
                 imagePreview {
-                  id
-                  url
-                }
-                image {
                   id
                   url
                 }
