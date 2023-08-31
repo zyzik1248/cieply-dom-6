@@ -8,6 +8,12 @@ const nextConfig = {
             port: '',
             pathname: '/output=format:jpg/**',
           },
+          {
+            protocol: 'https',
+            hostname: 'media.graphassets.com',
+            port: '',
+            pathname: '/**',
+          },
         ],
       },
 }

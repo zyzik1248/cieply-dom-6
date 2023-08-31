@@ -1,38 +1,22 @@
-// 'use client'
-
 import DownloadItem from "@/components/DownloadItem";
 import PageLayout from "@/components/PageLayout";
 import { MaterialQuery } from "@/types";
 
 async function getData() {
-    const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "", {
-        method: 'POST',
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/materials`, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          query: `
-          query GetMaterial {
-            material {
-              name
-              id
-              asset {
-                id
-                preview:url(transformation: {document: {output: {format: jpg}}})
-                url
-              }
-            }
-          }`,
-        }),
         next: { revalidate:  1200000}
       });
 
       const json = await response.json();
-      return json.data.material as MaterialQuery [];
+      return json
   }
 
 const Download = async () =>{
-    const materials = await getData()
+    const materials: MaterialQuery[] = await getData()
 
     return(
       <PageLayout title="Materiały do pobrania" bg="materialy">

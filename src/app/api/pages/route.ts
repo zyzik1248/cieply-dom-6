@@ -2,34 +2,37 @@ import { NextResponse } from "next/server";
 import fs from 'fs/promises';
 import path from 'path';
 
+interface IPage {
+  name: string
+  slug: string
+  description: string
+}
+
 interface IJson {
-  pages:[{
-    name: string
-    slug: string
-    description: string
-  }]
+  pages:[IPage]
 }
 
 const dataFilePath = path.join(process.cwd(), 'public', 'pageList.json');
 
 export async function POST(req : Request) {
   try{
-    const {name, slug, description} = await req.json()
+    const newPages: IPage[] = await req.json()
 
-    if(!name || !slug){
+    if(!newPages){
       return NextResponse.json({message: "bad data"}, {status: 500});
     }
 
     const pageFile = await fs.readFile(dataFilePath, 'utf-8');
     const json: IJson = JSON.parse(pageFile);
 
-    const page = json.pages.find(el => el.slug)
+    newPages.map(page=>{
+      const foundedPage = json.pages.find(el => el.slug === page.slug)
+      if(!foundedPage){
+        json.pages.push({...page})
+      }
+    })
 
-    if(!page){
-      json.pages.push({name, slug, description})
-      await fs.writeFile(dataFilePath, JSON.stringify(json, null, 2), 'utf-8');
-    }
-
+    await fs.writeFile(dataFilePath, JSON.stringify(json, null, 2), 'utf-8');
     return NextResponse.json({message: "ok"}, {status: 200});
   } catch(error){
     return NextResponse.json({message: "error", error}, {status: 500});
