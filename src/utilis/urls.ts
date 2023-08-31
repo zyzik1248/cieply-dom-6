@@ -8,6 +8,11 @@ export const urls = {
         download: {name: "Do pobrania", url: "/do-pobrania"},
         kontakt: {name: "Kontakt", url: "#kontakt"}
     },
+    links:{
+        audyt: {name: "Audyt i termomodernizacja", url: "audyt-i-termomodernizacja"},
+        guideParish: {name: "Poradnik dla parafii", url: "poradnik-dla-parafii"},
+        examples: {name: "Przykłady realizacji", url: "przyklady-realizacji"},
+    },
     carousel: [
         {url: "dla-parafii"},
         {url: "dla-parafian"},

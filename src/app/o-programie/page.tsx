@@ -8,10 +8,9 @@ const About = () => {
                 <div className="flex-1">
                     <h3 className="font-extrabold text-xl sm:text-2xl mb-6">O Programie</h3>
                     <p className="text-base sm:text-lg">
-                    Jako społeczeństwo stajemy obecnie przed ogromnymi wyzwaniami dotyczącymi zaopatrywania się w energię w codziennym życiu. Wojna w Ukrainie, kryzys energetyczny i próby zatrzymania coraz wyraźniejszych zmian klimatu powodują gwałtowne drożenie paliw – węgla, gazu, ropy, a nawet drewna – które do tej pory były podstawą ogrzewania wielu naszych domów i źródłem energii elektrycznej.
-                    <br></br><br></br>Dla wielu z nas, dla wielu naszych sąsiadów i bliskich ogrzewanie domu i opłacenie rachunków to coraz większy problem. Osoby z naszego otoczenia, zwłaszcza samotne kobiety są szczególnie narażone na ubóstwo energetyczne. 
-                    <br></br><br></br>Dlatego zapraszamy do tworzenia <span className="text-green font-bold">PARAFIALNYCH ZESPOŁÓW SOLIDARNOŚCI ENERGETYCZNEJ.</span> Podpowiadamy jak oszczędzać energię oraz jak korzystać z dostępnych dotacji na remonty i termomodernizację.
-                    We wspólnocie wierzących możemy razem zadbać o ciepłe domy i ciepłe kościoły!
+                        Jako społeczeństwo stajemy obecnie przed ogromnymi wyzwaniami dotyczącymi zaopatrywania się w energię w codziennym życiu. Wojna w Ukrainie, kryzys energetyczny i próby zatrzymania coraz wyraźniejszych zmian klimatu powodują gwałtowne drożenie paliw – węgla, gazu, ropy, a nawet drewna – które do tej pory były podstawą ogrzewania wielu naszych domów i źródłem energii elektrycznej.
+                        <br></br><br></br>
+                        Dla wielu z nas, dla wielu naszych sąsiadów i bliskich ogrzewanie domu i opłacenie rachunków to coraz większy problem. Osoby z naszego otoczenia, zwłaszcza samotne kobiety są szczególnie narażone na ubóstwo energetyczne.
                     </p>
                 </div>
                 <div className="relative m-auto mt-7 w-[250px] h-[250px] sm:flex-1 sm:w-[400px] sm:h-[400px]">
@@ -19,11 +18,18 @@ const About = () => {
                 </div>
             </div>
             <div className="max-w-[1000px] w-full m-auto">
+                <p className="text-base sm:text-lg">
+                    Najbardziej zanieczyszczone miasta w Europie znajdują się na terenie Polski. W gronie 20 miast, które w rankingu wypadły najgorzej, aż 12 znajduje się w Polsce. Większość budynków w Polsce to tzw. wampiry energetyczne, które wciąż trzeba ogrzewać, a i tak nie jest wystarczająco ciepło i sucho. Ciepło ucieka przez ściany, podłogi, nieocieplony dach, okna, drzwi zewnętrzne i wentylację. Źle ogrzewane i zabezpieczone budynki szybko niszczeją i tracą na wartości. Jeśli chcemy żeby dobrze służyły naszym dzieciom i wnukom przez lata warto w nie mądrze zainwestować korzystając z dostępnych programów pomocowych.  Drogą wyjścia z kryzysu jest droga do przodu: w kierunku efektywności energetycznej i neutralności klimatycznej. 
+                    <br></br><br></br>
+                    We wspólnocie wierzących możemy razem zadbać o ciepłe domy i ciepłe kościoły! Zapraszamy do tworzenia <span className="text-green font-bold">PARAFIALNYCH ZESPOŁÓW SOLIDARNOŚCI ENERGETYCZNEJ.</span> Podpowiadamy jak oszczędzać energię oraz jak korzystać z dostępnych dotacji na remonty i termomodernizację.
+                </p>
+            </div>
+            <div className="max-w-[1000px] w-full m-auto">
                 <h3 className="font-extrabold text-xl sm:text-2xl mb-6">Zapraszamy wszystkich, którzy chcą się włączyć w swoich lokalnych społecznościach do zdobycia:</h3>
                 <ul className="ul-primary text-base sm:text-lg">
-                    <li>wiedzy na temat oszczędności energii i transformacji energetycznej, a także o termomodernizacji oraz dofinansowaniach państwowych i gminnych na ten cel.</li>
-                    <li>kompetencji ułatwiających działanie w swoich lokalnych społecznościach: parafiach, szkołach, gminach itd.</li>
-                    <li>wsparcia finansowego i merytorycznego w realizacji lokalnych działań – zmian w infrastrukturze i wzorach zachowań – wpływających na oszczędność energii i środków finansowych, a także na ochronę środowiska i klimatu.</li>
+                    <li>Wiedzy na temat oszczędności energii i transformacji energetycznej, a także o termomodernizacji oraz dofinansowaniach państwowych i gminnych na ten cel.</li>
+                    <li>Kompetencji ułatwiających działanie w swoich lokalnych społecznościach: parafiach, szkołach, gminach itd.</li>
+                    <li>Wsparcia finansowego i merytorycznego w realizacji lokalnych działań – zmian w infrastrukturze i wzorach zachowań – wpływających na oszczędność energii i środków finansowych, a także na ochronę środowiska i klimatu.</li>
                 </ul>
             </div>
             <div className="max-w-[1000px] w-full m-auto">

@@ -36,7 +36,7 @@ export async function generateStaticParams() {
         slug,
         longSlug: `news/${slug}`,
         name: title,
-        description: description.html,
+        description: description.text,
         content: content.text
       }
       
