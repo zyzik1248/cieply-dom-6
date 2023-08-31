@@ -4,7 +4,7 @@ import { IndexQuery } from "@/types";
 
 const fuseOptions = {
   all: false,
-  threshold: -10000000,
+  threshold: -1000000,
   keys: ["content", "title", "description"]
   
 };
