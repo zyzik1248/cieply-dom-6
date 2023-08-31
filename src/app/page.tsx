@@ -6,39 +6,21 @@ import Why from "@/components/Why"
 import { NewsQuery } from "@/types"
 
 async function getData() {
-  const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      query: `
-        query GetNews1 {
-          news1(orderBy: postedDate_ASC) {
-            id
-            title
-            date
-            postedDate
-            slug
-            description {
-              html
-            }
-            imagePreview {
-              id
-              url
-            }
-            image {
-              id
-              url
-            }
-          }
-        }`,
-    }),
-    next: { revalidate: 1200000 }
-  });
-
-  const json = await response.json();
-  return json.data.news1.length ? json.data.news1[0] as NewsQuery : null;
+  try{
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/news`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      next: { revalidate: false }
+    });
+  
+    const data = await response.json();
+    return data.length ? data[0] as NewsQuery : null;
+  } catch(error){
+    console.log(error)
+    return null
+  }
 }
 
 const Home = async () => {

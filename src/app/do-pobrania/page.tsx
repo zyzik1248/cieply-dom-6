@@ -3,30 +3,23 @@ import PageLayout from "@/components/PageLayout";
 import { MaterialQuery } from "@/types";
 
 async function getData() {
-    const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "", {
-        method: 'POST',
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/materials`,
+      {
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          query: `
-          query GetMaterial {
-            material {
-              name
-              id
-              asset {
-                id
-                preview:url(transformation: {document: {output: {format: jpg}}})
-                url
-              }
-            }
-          }`,
-        }),
-        next: { revalidate:  1200000}
-      });
+        next: { revalidate: false}
+      }
+    );
 
-      const json = await response.json();
-      return json.data.material as MaterialQuery [];
+    const json = await response.json();
+
+    return json as MaterialQuery[]
+  } catch (error) {
+    return []
+  }
   }
 
 const Download = async () =>{

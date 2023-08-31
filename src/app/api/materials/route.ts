@@ -13,7 +13,7 @@ export async function GET() {
         body: JSON.stringify({
           query: `
               query GetMaterial {
-                material {
+                materials {
                   name
                   id
                   asset {
@@ -28,9 +28,7 @@ export async function GET() {
     );
 
     const json = await response.json();
-    // console.log(json)
-    const data  = json.data.material as MaterialQuery[];
-
+    const data  = json.data.materials as MaterialQuery[];
     return NextResponse.json([...data ], { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: "error", error }, { status: 500 });

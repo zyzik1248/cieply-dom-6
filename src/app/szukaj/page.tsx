@@ -11,16 +11,20 @@ interface IQuery {
 }
 
 async function getData(query: IQuery) {
-    const response = await fetch("/api/pages/search", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(query),
-    });
-
-    const json = await response.json();
-    return json
+    try{
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/search`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(query),
+        });
+    
+        const json = await response.json();
+        return json
+    } catch(error){
+        console.log(error)
+    }
 }
 
 const Search = () => {

@@ -4,6 +4,16 @@ export interface SearchPage{
     description: string
 }
 
+export interface IndexQuery{
+    id: string
+    name: string
+    description: string
+    slug: string
+    content: {
+        text: string
+    }
+}
+
 export interface MaterialQuery{
     name: string
     id: string
@@ -22,7 +32,7 @@ export interface NewsQuery{
     slug: string
     description: {
         html: string
-        text?: string
+        text: string
     }
     imagePreview: {
         id:string
