@@ -28,22 +28,24 @@ const Audyt = () => {
                     Efektem audytu jest dobrze zaplanowana, a potem fachowo przeprowadzona termomodernizacja.
                 </p>
             </div>
-            <div>
-                <h3 className="font-extrabold text-xl mb-6 sm:text-2xl">Co to jest Termomodernizacja?</h3>
-                <p className="text-base sm:text-lg mb-6">
-                    Termomodernizacja polega na poprawie wentylacji, ociepleniu ścian, stropów, podłóg oraz wymianie zużytej stolarki, a także usprawnieniu  systemu ogrzewania (wymianie pieca na energooszczędny i ekologiczny).
-                    <br></br><br></br>
-                    W ten sposób można zużywać kilkadziesiąt procent mniej energii na ogrzewanie .
-                </p>
-            </div>
-            <div>
-                <Image className="m-auto mb-8" alt="uciekające ciepło" src={"/ellipse.png"} width={350} height={350} />
-                <Link className="text-green underline font-bold" href={urls.links.examples.url}>Przeczytajcie, jak zrobili to inni</Link>
+            <div className="flex items-center">
+                <div className="flex-1">
+                    <h3 className="font-extrabold text-xl mb-6 sm:text-2xl">Co to jest Termomodernizacja?</h3>
+                    <p className="text-base sm:text-lg mb-6">
+                        Termomodernizacja polega na poprawie wentylacji, ociepleniu ścian, stropów, podłóg oraz wymianie zużytej stolarki, a także usprawnieniu  systemu ogrzewania (wymianie pieca na energooszczędny i ekologiczny).
+                        <br></br><br></br>
+                        W ten sposób można zużywać kilkadziesiąt procent mniej energii na ogrzewanie .
+                    </p>
+                    <Link className="text-green underline font-bold" href={urls.links.examples.url}>Przeczytajcie, jak zrobili to inni</Link>
+                </div>
+                <div className="flex-1">
+                    <Image className="m-auto" alt="uciekające ciepło" src={"/ellipse.png"} width={350} height={350} />
+                </div>
             </div>
             <div>
                 <h3 className="font-extrabold text-xl mb-6 sm:text-2xl">Gdzie szukać środków na remont?</h3>
                 <p className="text-base sm:text-lg mb-6">
-                    Dostępne są liczne dotacje: 
+                    Dostępne są liczne dotacje:
                 </p>
                 <p className="text-base font-bold sm:text-lg">krajowe</p>
                 <ul className="ul-primary text-base sm:text-lg mt-4 mb-6">
