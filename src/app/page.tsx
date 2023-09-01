@@ -12,9 +12,10 @@ async function getData() {
       headers: {
         'Content-Type': 'application/json',
       },
-      next: { revalidate: false }
+      next: { revalidate: false },
+      cache: "no-store"
     });
-  
+    
     const data = await response.json();
     return data.length ? data[0] as NewsQuery : null;
   } catch(error){

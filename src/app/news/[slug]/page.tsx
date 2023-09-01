@@ -1,7 +1,5 @@
 import NewsDate from "@/components/NewsDate";
 import { NewsQuery } from "@/types";
-import { createIndex } from "@/utilis/createIndex";
-import Image from "next/image";
 
 export const dynamicParams = false;
 
@@ -12,7 +10,8 @@ export async function generateStaticParams() {
       headers: {
         'Content-Type': 'application/json',
       },
-      next: { revalidate: false }
+      next: { revalidate: false },
+      cache: "no-store"
     });
 
     const json:  NewsQuery[] = await newsResponse.json();
@@ -23,7 +22,8 @@ export async function generateStaticParams() {
       headers: {
         'Content-Type': 'application/json',
       },
-      next: { revalidate: false }
+      next: { revalidate: false },
+      cache: "no-store"
     });
 
     const indexesJson = await indexesResponse.json();
@@ -32,11 +32,12 @@ export async function generateStaticParams() {
     for (let i = 0; i < data.length; i++) {
       const {slug, title, description, content} = json[i]
 
+
       const newIndex = {
         slug,
         longSlug: `news/${slug}`,
         name: title,
-        description: description.text.replace(/(\r\n|\n|\r)/gm, ""),
+        description: description.text,
         content: content.text
       }
       
@@ -48,7 +49,8 @@ export async function generateStaticParams() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({...newIndex}),
-          next: { revalidate: false }
+          next: { revalidate: false },
+          cache: "no-store"
         });
       } else {
         await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/${slug}`, {
@@ -57,7 +59,8 @@ export async function generateStaticParams() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({...newIndex}),
-          next: { revalidate: false }
+          next: { revalidate: false },
+          cache: "no-store"
         });
       }
 
@@ -66,7 +69,8 @@ export async function generateStaticParams() {
         headers: {
           'Content-Type': 'application/json',
         },
-        next: { revalidate: false }
+        next: { revalidate: false },
+        cache: "no-store"
       });
     }
 
@@ -78,7 +82,8 @@ export async function generateStaticParams() {
           headers: {
             'Content-Type': 'application/json',
           },
-          next: { revalidate: false }
+          next: { revalidate: false },
+          cache: "no-store"
         });
       }
     }
@@ -98,7 +103,8 @@ async function getData(slug: string) {
       headers: {
         'Content-Type': 'application/json',
       },
-      next: { revalidate: false }
+      next: { revalidate: false },
+      cache: "no-store"
     });
 
     const json = await response.json();

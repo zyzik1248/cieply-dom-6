@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function PUT(req : Request) {
   try{
-    const {content, description, name, slug} = await req.json()
+    const {content, description, name, slug, longSlug} = await req.json()
 
     const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "", {
       method: 'POST',
@@ -11,9 +11,9 @@ export async function PUT(req : Request) {
       },
       body: JSON.stringify({
         query: `
-        mutation PutIndex($slug: String, $name: String, $description: String, $content: String) {
+        mutation PutIndex($slug: String, $name: String, $description: String, $content: String,  $longSlug: String) {
           createIndex(
-            data: {content: $content, description: $description, name: $name, slug: $slug}
+            data: {content: $content, description: $description, name: $name, slug: $slug, longSlug: $longSlug}
           ){
             id
             name
@@ -23,7 +23,7 @@ export async function PUT(req : Request) {
             longSlug
           }
         }`,
-        variables: {slug, name, description, content}
+        variables: {slug, name, description, content, longSlug}
       }),
     });
 
