@@ -36,7 +36,7 @@ export async function generateStaticParams() {
         slug,
         longSlug: `news/${slug}`,
         name: title,
-        description: description.text,
+        description: description.text.replace(/(\r\n|\n|\r)/gm, ""),
         content: content.text
       }
       
