@@ -107,3 +107,26 @@ iframe::-webkit-scrollbar {
     color: #18813F;
     font-weight: bold;
 }
+
+.ol-primary { counter-reset: item; }
+
+.ol-start-4 { counter-reset: item+3; }
+
+.ol-primary li { 
+    display: block; 
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 12px;
+    padding-right: 30px;
+}
+
+.ol-primary li:before {
+    counter-set: chapter 100;
+    position: absolute;
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: #18813F;
+    transform: translate(-200%);
+    font-weight: bold;
+}
+  

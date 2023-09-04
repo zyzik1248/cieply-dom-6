@@ -43,9 +43,7 @@ const ForParishioners = () =>{
             </div>
             <div>
                 <h3 className="font-extrabold text-xl sm:text-2xl mb-6">MATERIAŁY DO POBRANIA</h3>
-                <Link className="text-green underline font-bold mb-2 block" href={urls.links.guideParishioners.url}>{urls.links.guideParishioners.name}</Link>
-                <Link className="text-green underline font-bold mb-2 block" href={urls.links.audyt.url}>{urls.links.audyt.name}</Link>
-                <Link className="text-green underline font-bold mb-2 block" href={urls.links.examples.url}>{urls.links.examples.name}</Link>
+                <Link className="text-green underline font-bold mb-2 block" target="_blank" href={"/poradnik-dla-parafian.pdf"}>{urls.links.guideParishioners.name}</Link>
             </div>
         </PageLayout>
     )

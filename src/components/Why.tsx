@@ -6,27 +6,18 @@ import { urls } from "@/utilis/urls"
 const Why = () =>{
     const points = [
         {
-            title: '"Potrzebna jest dziś nowa « wyobraźnia miłosierdzia», której przejawem będzie nie tyle i nie tylko skuteczność pomocy, ale zdolność bycia bliźnim dla cierpiącego człowieka, solidaryzowania się z nim, tak aby gest pomocy nie był odczuwany jako poniżająca jałmużna, ale jako świadectwo braterskiej wspólnoty dóbr." JPII', 
-            text: 'Jako chrześcijanie/katolicy patrzymy na problemy nie tylko przez pryzmat rozwiązań praktycznych, ale właśnie solidaryzowania się z potrzebującymi, współodczuwania i braterstwa. I że to jest też ten wkład który możemy wnieść w życie publiczne jako ludzie wierzący.',
+            title: '„Mamy możliwość przygotowania lepszego jutra dla wszystkich. Z Bożych rąk otrzymaliśmy ogród. Nie możemy naszym dzieciom pozostawiać pustyni” papież Franciszek', 
+            text: 'Wierzymy, że poprzez program Ciepły Dom - Ciepły Kościół możemy działać  pozytywnie patrząc z ufnością w przyszłość, do której Bóg prowadzi nas i nasze wspólnoty. Konkretne zmiany w naszym stylu życia, sposobie budowania i używania budynków, korzystania z dóbr materialnych to odpowiedź serca na wezwanie do przygotowania lepszego jutra dla wszystkich',
             image: "/icon.png"
         },
         {
-            title: ` “Chrześcijańska ekologia jest pro-life, (...) proponuje duchowość antykonsumpcyjną, (...) uważną na sytuację ludzi ubogich i doświadczanych współczesnymi kryzysami, 
-            jak kryzys społeczny, energetyczny czy klimatyczny” 
-            przewodniczący Konferencji Episkopatu Polski, abp Stanisław Gądecki.
-            `, 
-            text: `Jako chrześcijanie nie jesteśmy obojętni na problemy w naszym otoczeniu. To właśnie wiara i wspólnota Kościoła daje nam siły, by szukać rozwiązań i nieść pomoc 
-            <br>
-            Drogą wyjścia z kryzysu jest droga do przodu: w kierunku efektywności energetycznej i neutralności klimatycznej.
-            `,
+            title: 'Trzeba więc pobudzać i popierać “nawrócenie ekologiczne”, które w ostatnich dziesięcioleciach sprawiło, że ludzkość stała się bardziej wrażliwa na niebezpieczeństwo katastrofy, do jakiej zmierzaliśmy. Człowiek, który zamiast być “sługą” Stwórcy stał się niezależnym despotą, zaczyna rozumieć, że musi się zatrzymać w obliczu otchłani”  św.Jan Paweł II', 
+            text: 'Program Ciepły Dom - Ciepły Kościół to inicjatywa która wspierać ma ekologiczne nawrócenie, do którego wzywał św, Jan Paweł II. Nawracając się do Chrystusa widzimy Jego pełną miłości obecność we wszystkich braciach i siostrach oraz w całym stworzeniu. Dlatego działamy, by zmniejszać zanieczyszczenie środowiska i wspierać ludzi. Zachwyt nad pięknem i bogactwem świata wzmacnia naszą postawę odpowiedzialności za otrzymane dary.',
             image: "/icon.png"
         },
         {
-            title: `„[…] choć istniejący porządek świata nie jest w stanie wziąć na siebie odpowiedzialności, to organizacja lokalna może coś zmienić. Tam bowiem może zrodzić się większa odpowiedzialność, silne poczucie wspólnoty, szczególna zdolność do troski i bardziej wielkoduszna kreatywność, głęboka miłość do swej ziemi. Tam myśli się również o tym, co zostanie przekazane dzieciom i wnukom.„
-            (Papież Franciszek, encyklika Laudato si’, 179)
-            `, 
-            text: `Źle ogrzewane i zabezpieczone budynki szybko niszczeją i tracą na wartości. Jeśli chcemy żeby dobrze służyły naszym dzieciom i wnukom przez lata warto w nie mądrze zainwestować korzystając z dostępnych programów pomocowych. 
-            `,
+            title: '“Chrześcijańska ekologia jest pro-life, (...) proponuje duchowość (...) uważną na sytuację ludzi ubogich i doświadczanych współczesnymi kryzysami, jak kryzys społeczny, energetyczny czy klimatyczny” przewodniczący Konferencji Episkopatu Polski, abp Stanisław Gądecki.', 
+            text: 'Ekologia integralna, którą kierujemy się w programie Ciepły Dom - Ciepły Kościół  uwrażliwia nas na aktualne wyzwania w naszym otoczeniu. Widzimy coraz więcej osób dotkniętych ubóstwem energetycznym, problemy z drożejącym opałem, nieocieplone domy.  To właśnie wiara i wspólnota Kościoła daje nam siły, by szukać rozwiązań i nieść pomoc',
             image: "/icon.png"
         },
     ]

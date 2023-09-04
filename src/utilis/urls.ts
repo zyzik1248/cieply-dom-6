@@ -9,7 +9,7 @@ export const urls = {
         kontakt: {name: "Kontakt", url: "#kontakt"}
     },
     links:{
-        audyt: {name: "Audyt i termomodernizacja", url: "audyt-i-termomodernizacja"},
+        audyt: {name: "Audyt i dotacje", url: "audyt-i-dotacje"},
         guideParish: {name: "Poradnik dla parafii", url: "poradnik-dla-parafii"},
         guideParishioners: {name: "Poradnik dla parafian", url: "poradnik-dla-parafian"},
         examples: {name: "Przykłady realizacji", url: "przyklady-realizacji"},
