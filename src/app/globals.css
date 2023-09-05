@@ -120,7 +120,7 @@ iframe::-webkit-scrollbar {
     padding-right: 30px;
 }
 
-.ol-primary li:before {
+ol li:before {
     counter-set: chapter 100;
     position: absolute;
     content: counter(item) ". ";

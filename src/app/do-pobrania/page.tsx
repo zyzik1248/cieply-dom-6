@@ -1,4 +1,5 @@
 import DownloadItem from "@/components/DownloadItem";
+import MaterialsForm from "@/components/MaterialsForm";
 import PageLayout from "@/components/PageLayout";
 import { MaterialQuery } from "@/types";
 
@@ -33,6 +34,7 @@ const Download = async () =>{
                 <DownloadItem key={material.id} {...material}/>
             ))}
         </div>
+        <MaterialsForm/>
       </PageLayout>
     )
 }

@@ -36,3 +36,10 @@ export interface NewsQuery{
         url:string
     }
 }
+
+export interface MaterialPostQuery{
+    name: string
+    id: string
+    count: string
+    email: string
+}
