@@ -2,7 +2,7 @@ import PageLayout from "@/components/PageLayout"
 import Image from "next/image"
 import Link from "next/link"
 
-const About = () => {
+const Guide = () => {
     return (
         <PageLayout bg="poradnik" title="Poradnik">
             <div>
@@ -96,4 +96,4 @@ const About = () => {
     )
 }
 
-export default About
+export default Guide
