@@ -1,6 +1,7 @@
 import ExmapleButton from "@/components/ExampleButton"
 import PageLayout from "@/components/PageLayout"
 import SingleExample from "@/components/SingleExample"
+import Link from "next/link"
 import { title } from "process"
 
 const Exmaples = () => {
@@ -104,6 +105,7 @@ const Exmaples = () => {
             {examples.map((el) => (
                 <SingleExample key={el.title} {...el} />
             ))}
+            <p className="text-base sm:text-lg">zgłoś dobre rozwiązanie. napisz do nas na <Link target="_blank" className="text-green underline font-bold" href={""}>cieplydom@laudatosimovement.org</Link></p>
         </PageLayout>
     )
 }
