@@ -11,7 +11,6 @@ async function getData() {
         headers: {
           "Content-Type": "application/json",
         },
-        next: { revalidate: false },
         cache: "no-store"
       }
     );
