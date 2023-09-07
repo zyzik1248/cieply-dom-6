@@ -32,7 +32,7 @@ const MaterialsForm: React.FC = () =>{
 
     return(
         <form action={create} className="flex flex-col gap-4 mt-12 m-auto w-fit"> 
-            <h3 className="text-xl font-extrabold sm:text-2xl">Lorem ipsum dolor sit amet.</h3>
+            <h3 className="text-xl font-extrabold sm:text-2xl"> Materiał dostępny po wypełnieniu prostej ankiety poniżej.</h3>
             <input name="name" className="text-base sm:text-lg w-fit min-w-0 sm:min-w-[400px] rounded-full border-2 py-2 px-4" required placeholder="nazwa parafii i miasto (diecezja)" type="text"/>
             <input name="count" className="text-base sm:text-lg w-fit min-w-0 sm:min-w-[400px] rounded-full border-2 py-2 px-4" required placeholder="jaki zasięg użycia materiału? (+/- Ilość sztuk)" type="text"/>
             <input name="email" className="text-base sm:text-lg w-fit min-w-0 sm:min-w-[400px] rounded-full border-2 py-2 px-4" required placeholder="adres mailowy" type="email"/>
