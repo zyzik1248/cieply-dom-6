@@ -5,7 +5,7 @@ import { IndexQuery } from "@/types";
 const fuseOptions = {
   all: false,
   threshold: -1000000,
-  keys: ["content", "title", "description"]
+  keys: ["content", "name", "description"]
   
 };
 
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     });
 
     const json = await response.json()
-    const data = json.data.indexes as IndexQuery[]
+    const data = (json.data.indices.data as IndexQuery[]).map(d=>{return {...d.attributes}})
 
     const results = fuzzysort.go(query, data, fuseOptions);
     const foundItems = results.map(result => result.obj);

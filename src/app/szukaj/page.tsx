@@ -1,7 +1,7 @@
 'use client'
 
 import FindSingle from "@/components/FindSingle";
-import { IndexQuery } from "@/types";
+import { IndexAtributtes, IndexQuery } from "@/types";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -31,7 +31,7 @@ const Search = () => {
     const router = useRouter()
     const searchParams = useSearchParams();
     const query = searchParams.get("s") || ""
-    const [data, setData] = useState<IndexQuery[]>([]);
+    const [data, setData] = useState<IndexAtributtes[]>([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -43,9 +43,7 @@ const Search = () => {
             router.push("/");
         }
 
-        if (!data.length) {
-            fetchData();
-        }
+        fetchData();
     }, [query])
 
     return (
