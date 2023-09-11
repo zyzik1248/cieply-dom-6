@@ -1,5 +1,5 @@
 import NewsDate from "@/components/NewsDate";
-import { ArticleQuery, NewsQuery } from "@/types";
+import { ArticleQuery} from "@/types";
 import MarkdownIt from "markdown-it";
 
 export const dynamicParams = false;

@@ -8,33 +8,26 @@ export interface IndexQuery {
 }
 
 export interface MaterialQuery {
-  name: string;
   id: string;
-  asset: {
-    id: string;
-    url: string;
-    preview: string;
-  };
-}
-
-export interface NewsQuery {
-  id: string;
-  title: string;
-  date: string;
-  postedDate: string;
-  slug: string;
-  description: {
-    html: string;
-    text: string;
-  };
-  content: {
-    html: string;
-    text: string;
-  };
-  imagePreview: {
-    id: string;
-    url: string;
-  };
+  attributes: {
+    name: string
+    asset: {
+      data: {
+        id: string
+        attributes: {
+          url: string
+        }
+      }
+    }
+    preview: {
+      data: {
+        id: string
+        attributes: {
+          url: string
+        }
+      }
+    }
+  }
 }
 
 export interface MaterialPostQuery {
