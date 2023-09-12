@@ -38,25 +38,21 @@ export async function PUT(req : Request) {
 
 export async function GET() {
   try{
-    const response = await fetch(process.env.NEXT_PUBLIC_STRAPI_ENDPOINT || "", {
+    const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         query: `
-        query Indexes{
-          indices{
-            data{
-              id
-              attributes{
-                name
-                slug
-                description
-                longSlug
-                content
-              }
-            }
+        query GetIndexes {
+          indexes{
+            description
+            name
+            id
+            slug
+            content
+            longSlug
           }
         }`,
       }),

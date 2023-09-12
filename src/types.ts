@@ -1,68 +1,45 @@
-export interface IndexQuery {
-  id: string
-  attributes :{
+export interface IndexQuery{
+    id: string
     name: string
-    slug: string
     description: string
-    longSlug: string
+    slug: string
     content: string
-  }
+    longSlug: string
 }
 
-export interface IndexAtributtes {
-  name: string
-  slug: string
-  description: string
-  longSlug: string
-  content: string
-}
-
-export interface MaterialQuery {
-  id: string;
-  attributes: {
+export interface MaterialQuery{
     name: string
+    id: string
     asset: {
-      data: {
-        id: string
-        attributes: {
-          url: string
-        }
-      }
+        id:string
+        url:string
+        preview:string
     }
-    preview: {
-      data: {
-        id: string
-        attributes: {
-          url: string
-        }
-      }
-    }
-  }
 }
 
-export interface MaterialPostQuery {
-  name: string;
-  id: string;
-  count: string;
-  email: string;
+export interface NewsQuery{
+    id: string
+    title: string
+    date: string
+    postedDate: string
+    slug: string
+    description: {
+        html: string
+        text: string
+    }
+    content: {
+        html: string
+        text: string
+    }
+    imagePreview: {
+        id:string
+        url:string
+    }
 }
 
-export interface ArticleQuery {
-  id: string;
-  attributes: {
-    title: string;
-    date: string;
-    datePosted: string;
-    slug: string;
-    content: string;
-    description: string;
-    cover: {
-      data: {
-        id: string;
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
+export interface MaterialPostQuery{
+    name: string
+    id: string
+    count: string
+    email: string
 }
