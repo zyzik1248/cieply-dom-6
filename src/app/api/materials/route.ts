@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const response = await fetch(
-      process.env.NEXT_PUBLIC_STRAPI_ENDPOINT || "",
+      process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "",
       {
         method: "POST",
         headers: {
@@ -12,38 +12,23 @@ export async function GET() {
         },
         body: JSON.stringify({
           query: `
-          query Materials {
-            materials{
-              data{
-                id
-                attributes{
+              query GetMaterial {
+                materials {
                   name
-                  asset{
-                    data{
-                      id
-                      attributes{
-                        url
-                      }
-                    }
-                  }
-                  preview{
-                    data{
-                      id
-                      attributes{
-                        url
-                      }
-                    }
+                  id
+                  asset {
+                    id
+                    preview:url(transformation: {document: {output: {format: jpg}}})
+                    url
                   }
                 }
-              }
-            }
-          }`,
+              }`,
         }),
       }
     );
 
     const json = await response.json();
-    const data  = json.data.materials.data as MaterialQuery[];
+    const data  = json.data.materials as MaterialQuery[];
     return NextResponse.json([...data ], { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: "error", error }, { status: 500 });

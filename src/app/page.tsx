@@ -3,11 +3,11 @@ import PagesCarousel from "@/components/PagesCarousel"
 import Partners from "@/components/Partners"
 import ShortAbout from "@/components/ShortAbout"
 import Why from "@/components/Why"
-import { ArticleQuery } from "@/types"
+import { NewsQuery } from "@/types"
 
 async function getData() {
   try{
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/articles`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/news`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ async function getData() {
     });
     
     const data = await response.json();
-    return data.length ? data[0] as ArticleQuery : null;
+    return data.length ? data[0] as NewsQuery : null;
   } catch(error){
     console.log(error)
     return null
