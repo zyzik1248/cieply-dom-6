@@ -28,6 +28,7 @@ const Download = async () =>{
 
     return(
       <PageLayout title="Materiały do pobrania" bg="materialy">
+        <h1 className="text-xl font-extrabold sm:text-2xl">materiały do pobrania wkrótce</h1>
         {/* <div className="flex flex-wrap gap-4 justify-center">
             {materials.map(material =>(
                 <DownloadItem key={material.id} {...material}/>

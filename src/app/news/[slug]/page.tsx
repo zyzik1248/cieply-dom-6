@@ -17,76 +17,76 @@ export async function generateStaticParams() {
     const json:  NewsQuery[] = await newsResponse.json();
     const data = json.map((el: NewsQuery) => { return { slug: el.slug } })
 
-    const indexesResponse = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      next: { revalidate: false },
-      cache: "no-store"
-    });
+    // const indexesResponse = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   next: { revalidate: false },
+    //   cache: "no-store"
+    // });
 
-    const indexesJson = await indexesResponse.json();
-    const indexes: NewsQuery[] = indexesJson.data.indexes
+    // const indexesJson = await indexesResponse.json();
+    // const indexes: NewsQuery[] = indexesJson.data.indexes
 
-    for (let i = 0; i < data.length; i++) {
-      const {slug, title, description, content} = json[i]
+    // for (let i = 0; i < data.length; i++) {
+    //   const {slug, title, description, content} = json[i]
 
 
-      const newIndex = {
-        slug,
-        longSlug: `news/${slug}`,
-        name: title,
-        description: description.text,
-        content: content.text
-      }
+    //   const newIndex = {
+    //     slug,
+    //     longSlug: `news/${slug}`,
+    //     name: title,
+    //     description: description.text,
+    //     content: content.text
+    //   }
       
-      const foundedItem = indexes.find(el => el.slug === slug)
-      if (!foundedItem) {
-        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({...newIndex}),
-          next: { revalidate: false },
-          cache: "no-store"
-        });
-      } else {
-        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/${slug}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({...newIndex}),
-          next: { revalidate: false },
-          cache: "no-store"
-        });
-      }
+    //   const foundedItem = indexes.find(el => el.slug === slug)
+    //   if (!foundedItem) {
+    //     await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes`, {
+    //       method: 'PUT',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify({...newIndex}),
+    //       next: { revalidate: false },
+    //       cache: "no-store"
+    //     });
+    //   } else {
+    //     await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/${slug}`, {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify({...newIndex}),
+    //       next: { revalidate: false },
+    //       cache: "no-store"
+    //     });
+    //   }
 
-      await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/publish/${slug}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        next: { revalidate: false },
-        cache: "no-store"
-      });
-    }
+    //   await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/publish/${slug}`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     next: { revalidate: false },
+    //     cache: "no-store"
+    //   });
+    // }
 
-    for(let i =0; i<indexes.length; i++){
-      const foundedIndex = json.find(el=>el.slug === indexes[i].slug);
-      if(!foundedIndex){
-        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/${indexes[i].slug}`, {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          next: { revalidate: false },
-          cache: "no-store"
-        });
-      }
-    }
+    // for(let i =0; i<indexes.length; i++){
+    //   const foundedIndex = json.find(el=>el.slug === indexes[i].slug);
+    //   if(!foundedIndex){
+    //     await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/${indexes[i].slug}`, {
+    //       method: 'DELETE',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       next: { revalidate: false },
+    //       cache: "no-store"
+    //     });
+    //   }
+    // }
 
     return data;
   } catch (error) {
@@ -103,7 +103,7 @@ async function getData(slug: string) {
       headers: {
         'Content-Type': 'application/json',
       },
-      next: { revalidate: false },
+      // next: { revalidate: false },
       cache: "no-store"
     });
 
