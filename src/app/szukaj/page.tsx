@@ -43,9 +43,9 @@ const Search = () => {
             router.push("/");
         }
 
-        if (!data.length) {
+        // if (!data.length) {
             fetchData();
-        }
+        // }
     }, [query])
 
     return (
