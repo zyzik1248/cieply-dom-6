@@ -1,8 +1,9 @@
 import { MaterialQuery } from "@/types"
-import { toBase64 } from "@/utilis/convertToBase64"
+import { toBase64 } from "@/utilis/fileConverter"
 
-const DownloadItem: React.FC<MaterialQuery> = async ({name, asset}) =>{
-    const image = await toBase64(asset.preview)
+const DownloadItem: React.FC<MaterialQuery> = async ({attributes}) =>{
+    const {name, asset, preview} = attributes
+    const image = await toBase64(`${process.env.NEXT_PUBLIC_SITE_URL}${preview.data.attributes.url}`)
 
     return(
         <div className="mt-[50px] relative w-[300px] flex items-center flex-col sm:mt-[100px]">
