@@ -2,7 +2,12 @@ import ExmapleButton from "@/components/ExampleButton"
 import PageLayout from "@/components/PageLayout"
 import SingleExample from "@/components/SingleExample"
 import Link from "next/link"
-import { title } from "process"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Ciepły dom - Ciepły kościół | Dobre Przykłady',
+    description: 'Nasz zespół programu CDCK odwiedził różne miejsca w Polsce, by zobaczyć jak w praktyce udała się termomodernizacja budynków kościelnych i prywatnych. Udanych realizacji jest naprawdę wiele! Zapraszamy do zapoznania się z przykładami poniżej i do zgłaszania nam kolejnych. Chcemy, by dobre przykłady zachęcały do działań i zmiany naszego świata na lepsze!',
+  }
 
 const Exmaples = () => {
     const examples = [

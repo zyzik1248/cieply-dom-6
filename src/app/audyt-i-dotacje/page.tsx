@@ -2,6 +2,12 @@ import PageLayout from "@/components/PageLayout"
 import { urls } from "@/utilis/urls"
 import Image from "next/image"
 import Link from "next/link"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Ciepły dom - Ciepły kościół | Audyt i dotacje',
+    description: 'Nasze budynki mogą zużywać kilkadziesiąt procent mniej energii na ogrzewanie! Warunkiem jest wykonanie termomodernizacji - najlepiej na podstawie Audytu Energetycznego.',
+  }
 
 const Audyt = () => {
     return (

@@ -4,6 +4,12 @@ import Partners from "@/components/Partners"
 import ShortAbout from "@/components/ShortAbout"
 import Why from "@/components/Why"
 import { NewsQuery } from "@/types"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Ciepły dom - Ciepły kościół | Strona główna',
+  description: 'Program „Ciepły Dom - Ciepły Kościół” powstał, by promować solidarne wspólnoty parafialne, w których razem zadbamy o ciepło w naszych domach i parafiach, oraz wesprzemy tych, którym grozi ubóstwo energetyczne.',
+}
 
 async function getData() {
   try{

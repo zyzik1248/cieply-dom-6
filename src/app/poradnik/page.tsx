@@ -1,113 +1,105 @@
-import ExmapleButton from "@/components/ExampleButton"
 import PageLayout from "@/components/PageLayout"
-import SingleExample from "@/components/SingleExample"
+import Image from "next/image"
 import Link from "next/link"
-import { title } from "process"
+import { Metadata } from "next"
 
-const Exmaples = () => {
-    const examples = [
-        {
-            title: "Iwonka",
-            text: "Łódź",
-            content: "Ten przykład jest moją osobistą historią. Panią Iwonę, która zmagała się z problemem ogrzania swojego mieszkanka znam od kilku lat. Pomagałam jej jako asystent rodziny zanim jej niepełnosprawna córka osiągnęła pełnoletniość. Teraz pani Iwona mieszka sama, ale nie jest to łatwe, gdy dwuizbowy lokal w zniszczonej kamienicy trzeba ogrzewać piecem węglowym. Dla niepełnosprawnej rencistki zakup opału to duże wyzwanie finansowe. Ponadto w ostatnich latach węgla brakowało na miejskich składach, a w kupionych workach połowę stanowił miał zmieszany z piachem. Do tego dochodzi problem smogu, który w okresie grzewczym wciąż spowija stare dzielnice miasta, a pani Iwona cierpi na astmę. Władze gminy jak wiele samorządów w Polsce namawiają do wymiany pieców i dają duże dofinansowania. Wkrótce zacznie obowiązywać zakaz palenia w „kopciuchach”. Dlatego zdecydowałyśmy się wspólnie na takie dofinansowanie. Najtrudniejsze było wybranie się do urzędu, by dopytać o szczegóły i formalności. Wizyta okazała się jednak bardzo miłym doświadczeniem. Pani z Departamentu Klimatu wszystko wyjaśniła, doradziła i dała kontakt do siebie, podkreślając, że w razie jakichkolwiek wątpliwości można się do niej zwracać. Przyznam, że wykorzystałam to kilka razy i dzięki temu wszystkie pozwolenia i opinie udało się załatwić. Trochę czasu zajęło nam też poszukiwanie najbardziej sensownego sposobu ogrzewania elektrycznego (gazu w kamienicy nie ma i raczej nie będzie). Ostatecznie wybór padł na wyższej klasy pompę ciepła czyli nowoczesny klimatyzator z funkcją grzania. Piec węglowy został zdemontowany i oddany na złomowisko, a w centralnej części mieszkania sprawdzona firma zamontowała urządzenie grzewcze. Wykorzystałyśmy całą dotację tzn. 9 tys. zł. plus wkład własny w wysokości 1 tys. zł. Instalacja jest estetyczna, a urządzenie wydajne i łatwe w obsłudze. Pani Iwona z dumą pokazuje klimatyzator znajomym i sprawnie ustawia pilotem temperaturę, jaka jej odpowiada. Koszty ogrzewania nie są wyższe niż przy starym piecu węglowym, a komfort użytkowania bez porównania wyższy.",
-            fullTitle: "Łódź, mieszkanie pani Iwony w kamienicy śródmiejskiej"
-        },
-        {
-            title: "Danusia",
-            text: "Bukowina Sycowska",
-            content: "w toku",
-            fullTitle: "Bukowina Sycowska, dom pani Danuty"
-        },
-        {
-            title: "Dom pasywny",
-            text: "Łódź",
-            content: "Ania i Paweł mieszkają z dwojgiem nastoletnich dzieci na obrzeżach dużego miasta. To ludzie głęboko wierzący, zaangażowani w pomoc potrzebującym i kochający przyrodę. Ich działka otoczona jest naturalną zielenią, pod płot podchodzą dziki i sarny. Parterowy, nowoczesny budynek o prostej zwartej konstrukcji to dom pasywny, czyli maksymalnie energooszczędny. Dom ma powierzchnię 180 m2 i wszystko w nim zasilane jest prądem. Domownicy preferują dość wysoką temperaturę 24 st.C wewnątrz, poza tym na co dzień dużo pieką i gotują, a Paweł pracuje w domu, a mimo to rachunki nie są wysokie i obecnie wynoszą 400-500 zł. miesięcznie. Paweł nie zdecydował się jeszcze na panele słoneczne, ale w głowie ma już plan całkowitego energetycznego uniezależnienia się. Energia ze słońca kusi go, bo przyznaje, że wyższe rachunki za prąd płacą latem, gdy zamiast ogrzewać dom filtrują wodę w basenie. Klimatyzować pomieszczeń nie muszą, bo dom w ogóle nie przegrzewa się, Paweł mówi z uśmiechem, że nie ma prawa przy tak grubej izolacji. Zdarza się natomiast 1-2 razy w roku zimą, że przy dużych spotkaniach rodzinnych robi się trochę za ciepło. Co prawda można otworzyć drzwi balkonowe, ale nie jest to komfortowe, gdy na zewnątrz śnieg i mróz. Gruba izolacja to nie jedyny powód, dla którego ciepło nie ucieka z budynku. Okna i drzwi mają najwyższe współczynniki przenikalności cieplnej, budynek jest bardzo szczelny, a system rekuperacji dostarcza do środka świeże, czyste i podgrzane powietrze. To ważne, bo za oknem nawet wśród podmiejskiej zieleni powietrze czyste nie jest. Paweł musi co 3 miesiące gruntownie czyścić filtry rekuperatora, na których zbiera się gruby kożuch pyłów. Dom utrzymuje komfortową temperaturę też przez to, że nie ma okien od północy, a duże okna od południa wpuszczają światło słoneczne, którego ciepło akumuluje się w ścianach i płycie fundamentowej. Dzięki temu budynek długo wychładza się i długo nagrzewa. By utrzymać stałą temperaturę trzeba wcześniej wiosną (marzec/kwiecień) wyłączać ogrzewanie i stosunkowo wcześnie jesienią (październik) je włączać. Domownicy sprawdzili efektywność tego systemu, gdy w grudniu przestała działać pompa ciepła i przez dwa tygodnie nie było możliwości dogrzewania pomieszczeń. Wówczas temperatura spadła zaledwie do 22 st.C, choć miesiąc był mroźny.<br><br>Po kilku latach użytkowania Ania i Paweł są bardzo zadowoleni z tego, że zdecydowali się na budynek pasywny. Cenią komfort życia w nim i wygodę obsługiwania urządzeń. Gdy realizowali przedsięwzięcie koszt budowy był niemal 20 % wyższy niż standardowego budynku. Te nakłady zwracają się jednak w eksploatacji budynku. Teraz koszty takich domów są zbliżone do rozwiązań typowych, wysiłkiem jest tylko znalezienie solidnego, przestrzegającego standardów wykonawcy. Dodatkową zachętą są dotacje na pompy ciepła w Programie Moje Ciepło (do 21 tys.zł) oraz na panele fotowoltaiczne Mój Prąd (do 6 tys. zł.), a także lokalne dotacje gminne, o które warto pytać w urzędach gminy lub powiatu.",
-            fullTitle: "Łódź, dom pasywny Ani i Pawła"
-        },
-        {
-            title: "Dom parafialny",
-            text: "Koluszki",
-            content: `<p>Koluszki to niewielkie miasto w województwie łódzkim, przedzielone na dwie niemal równe części
-            torami kolejowymi. Parafia św Katarzyny Aleksandryjskiej, liczy ok. 5 tys. mieszkańców i powstała
-            ponad 30 lat temu jako druga w mieście. Wtedy też zbudowano spory dom parafialny z plebanią,
-            kaplicą i salkami parafialnymi, który po latach niemal nie nadawał się do użytku, a koszty jego
-            utrzymania rosły z miesiąca na miesiąc. W wiosenne przedpołudnie staję przed świeżo
-            wymalowanym, pięknie odnowionym i ocieplonym budynkiem. Ksiądz proboszcz Grzegorz Świtalski
-            zaprasza mnie na plebanię. Ponieważ salki parafialne nie są jeszcze całkiem wykończone to tutaj
-            spotyka się większość grup oraz prężna ośmioosobowa Rada Ekonomiczna. W mieszkaniu księdza
-            proboszcza czują się jak u siebie, bo też wspólnie z nim decydują o sprawach parafii. Dzięki wspólnej
-            decyzji w 2017 r. złożono wniosek o przyznanie dofinansowania na termomodernizację budynku z
-            Funduszy Europejskich RPO Województwa Łódzkiego. W 2020 r. ocieplono fundamenty, ściany i
-            stropy. Wymieniono stolarkę drzwiową i okienną, pokrycie dachowe oraz instalację wodno -
-            kanalizacyjną. Starą kotłownię zastąpiono nowoczesnym niskoemisyjnym piecem gazowym. „Sam
-            nigdy bym się tego nie podjął. Ja się na tym nie znam” przyznaje z rozbrajającą szczerością ksiądz
-            Grzegorz i dodaje, że wśród jego parafian są prawdziwi fachowcy, których czasem wręcz nie rozumie,
-            ale może zaufać. Ryzykiem było zapewnienie środków na wkład własny początkowo szacowany na
-            czterysta tysięcy złotych, a ostatecznie wynoszący niemal siedemset. Ta imponująca kwota została
-            jednak zebrana przez całą społeczność, która czekała, by móc korzystać z wyremontowanego
-            budynku. Biskup zgodził się też, by wszelkie zbiórki i zbierane ofiary zostawały dla parafii, a nie były
-            przekazywane diecezji. Dewizą księdza Grzegorza jest otwartość „Ludziom trzeba mówić o wszystkim,
-            także o tych sprawach finansowych. Obowiązkiem jest przedstawić raz w roku sprawozdanie
-            finansowe, ale ja mówię częściej - co jest planowane, co się udało, co trzeba robić po kolei”. Pewnie
-            stąd aktywność i chęć działania wśród parafian. Przedstawili już księdzu pomysły na funkcjonowanie
-            salek - ma być studio nagrań, biblioteka, mini kino. Namówili też na kolejną termomodernizację, bo
-            teraz kolej na kościół. Audyt został już wykonany i przygotowano wniosek tym razem do Narodowego
-            i do Wojewódzkiego Funduszu Ochrony Środowiska i Gospodarki Wodnej. W planach jest ocieplenie
-            kościoła, zainstalowanie paneli fotowoltaicznych oraz pomp ciepła z rekuperacją i systemem
-            zarządzania energią. Ksiądz Grzegorz oprowadza mnie po świątyni i lekko rozmarzonym głosem
-            kończy „I wtedy będzie można jakoś ładnie pomalować nawy</p>”.
-            `,
-            fullTitle: "Koluszki - parafia św Katarzyny Aleksandryjskiej - dom parafialny"
-        },
-        {
-            title: "Kościół i dom Parafialny",
-            text: "Łódź",
-            content: "<p>Parafia Świętych Apostołów Piotra i Pawła w Łodzi znajduje się w centrum miasta pośród starej śródmiejskiej zabudowy. Kościół powstał na początku XX w., ale swój obecny nowoczesny kształt osiągnął ok. 25 lat temu. Weszłam do kościoła na poranną mszę świętą w tygodniu i zdziwiło mnie pełne oświetlenie i komfortowa temperatura przy niewielkiej grupce wiernych. Energii wyraźnie nikt tu nie skąpi. Zapytałam o to proboszcza. Ksiądz Wiesław Kamiński wita mnie w progu nowej plebanii, gdzie właśnie trwają prace termomodernizacyjne. Przynosi mi kawę i ciasteczka i znika z budowlańcami. Proboszcz to człowiek bardzo aktywny i otwarty na nowe pomysły. Termomodernizacja nowej plebani to kolejny krok w parafii. Najpierw był kościół i stara plebania zmodernizowane z wykorzystaniem dotacji z Narodowego Funduszu Ochrony Środowiska i Gospodarki Wodnej, teraz zapadła decyzja o termomodernizacji nowszego budynku ze środków własnych. Doświadczenie pokazało bowiem, że jest to tak opłacalna inwestycja, że nie warto zwlekać i czekać na dofinansowanie. Kiedy ksiądz Wiesław w 2020 r. zaczynał termomodernizację kościoła było to pierwsze tego typu przedsięwzięcie w diecezji.  Decyzję podjął wraz z Radą Parafialną, gdyż rachunki rosły w zastraszającym tempie, a i tak w kościele było zimno, nieprzyjemnie i wiele osób nie chciało korzystać z wychłodzonych pomieszczeń. Docieplono stropy kościoła, wymieniono drzwi i okna, na witraże założono izolujące szyby. Na dachu pojawiły się panele fotowoltaiczne zaopatrujące budynek w darmowy prąd i zasilające pompy ciepła. Stąd oszczędności na cieple i oświetleniu nie są potrzebne. Ksiądz proboszcz z zadowoleniem prezentuje mi na swoim telefonie aplikację, dzięki której może w zależności od potrzeb ustawiać temperaturę w poszczególnych pomieszczeniach „Tu widać, ile energii produkują teraz panele, a tu w salce ustawię wyższą temperaturę, bo po południu spotykają się tam dzieciaki”. W parafii działa ponad trzydzieści grup i duszpasterstw, więc jest się o kogo zatroszczyć, a pomieszczenia służą także wielu osobom spoza parafii.<br><br>Ksiądz Wiesław z czystym sercem poleca termomodernizację. W jego parafii głównym motywem była ekonomia, ale przyznaje, że chciałby, żeby nie mniej ważna była też troska o środowisko. Sam jest pszczelarzem i wie, jak ważna jest ekologia.</p>",
-            fullTitle: "Łódź, parafia św. Apostołów Piotra i Pawła - kościół i dom parafialny"
-        },
-        {
-            title: "Kościół",
-            text: "Belsk Duży",
-            content: "<p>Kościół Świętej Trójcy w Belsku Dużym to ładny klasycystyczny budynek z XVIII wieku. Parafia liczy ok. 3 tys. mieszkańców, których znaczna część pracuje w okolicznych gospodarstwach sadowniczych. Parafianie wymarznięci przy pracy na dworze chętnie przychodzą do ciepłych i suchych  miejsc. Właśnie dla nich ksiądz proboszcz Jarosław Siuchta przeprowadził w 2020 r. termomodernizację zabytkowego kościoła. Żal mu było także samego niszczejącego budynku, w którym panowała wilgoć i uciążliwy chłód. To oraz ogromne koszty mało efektywnego ogrzewania elektrycznego zmobilizowały radę parafialną i przyjaciół parafii do ambitnego przedsięwzięcia. Proboszcz zaczął od audytu energetycznego, który wykazał jak duże są straty ciepła oraz jak szerokie możliwości zmiany na lepsze. Dzięki dofinansowaniu z Narodowego Funduszu Ochrony Środowiska i Gospodarki Wodnej w wysokości ponad 1,5 mln zł. oraz pożyczce bankowej udało się zrealizować kompleksową termomodernizację. Ocieplono stropy, zaizolowano fundamenty, okna zostały wymienione na stalowe, a witraże zabezpieczono termicznie. W kościele zainstalowano ogrzewanie podłogowe, zasilane pompami ciepła podłączonymi do paneli fotowoltaicznych i kotłowni gazowej. Przy okazji dzięki składkom wiernych położono piękną nową posadzkę. „Na ślubach młodzi nie chcą już rozkładanego dywanu” mówi z uśmiechem proboszcz. W kościele zimą temperatura utrzymuje się na poziome 14 st.C, jest sucho i ładnie. Rachunki obniżyły się niemal trzykrotnie. Nowoczesne urządzenia są łatwe w obsłudze i bezawaryjne. Kredyt rozpisany na 5 lat jest już prawie w połowie spłacony. Ksiądz Jarosław z wdzięcznością mówi o życzliwych i pomocnych osobach oraz ogromnej hojności wiernych, którzy poważnie zaangażowali się w remont swojej świątyni: „Było dużo wpłat indywidualnych na termomodernizację. Każdy dał po trochu i cała społeczność kibicowała przedsięwzięciu.” Ten wspólnotowy wysiłek przyniósł wspaniałe owoce, bo kościół przyciąga urodą i jest chętnie wybierany nie tylko przez parafian jako miejsce modlitwy i ślubów.</p>",
-            fullTitle: "Belsk Duży, Parafia Św. Trójcy, kościół"
+export const metadata: Metadata = {
+    title: 'Ciepły dom - Ciepły kościół | Poradnik',
+    description: 'PRAKTYCZNY PORADNIK DLA PARAFII CZYLI DLA WSZYSTKICH ODPOWIEDZIALNYCH I ZAANGAŻOWANYCH W TO, BY NASZE KOŚCIOŁY I BUDYNKI PARAFIALNE BYŁY CIEPŁE, A ICH UTRZYMANIE MNIEJ KOSZTOWNE.',
+  }
 
-        },
-        {
-            title: "Klasztor oo. Benedyktynów",
-            text: "Lubiń",
-            content: "<p>Mój mąż jest oblatem benedyktyńskim, co oznacza że będąc mężem i ojcem w swojej codzienności stara się żyć duchem reguły św. Benedykta. Opactwo Benedyktynów w Lubiniu odwiedziłam więc nieprzypadkowo. Ten kompleks klasztorny o długiej tradycji sięgającej XI wieku stanowił niełatwe zadanie termomodernizacyjne. Wielu rzeczy nie można było zrobić ze względu na ochronę konserwatorską. Jednak przeor brat Izaak Kapała zdecydował się zawalczyć o lepsze warunki życia dla swoich współbraci i o same mury, które niszczyła wilgoć i zagrzybienie.<br><br>Przyjął mnie kawą w klimatycznej rozmównicy i zaczął opowieść. „W Europie widziałem piękne klasztory, pozalewane i niszczejące. Zrozumiałem, że trzeba myśleć o kapitalnym remoncie C.O., ale długo czekaliśmy z decyzją, bo to wielkie koszty”- wspomina. Wspólnotę przekonał zaprzyjaźniony oblat – specjalista od termomodernizacji. Nie bez znaczenia była też rosnąca świadomość ekologiczna wspólnoty – palenie węglem i drewnem to produkcja smogu i dwutlenku węgla. Poza tym bracia byli zmęczeni przenikliwym chłodem pomieszczeń i uciążliwą obsługą kotłowni. Warunki nie sprzyjały przyjmowaniu gości, którzy z chęcią korzystają ze spotkań i rekolekcji w klasztorze. Wilgoć była zaś zagrożeniem dla cennego księgozbioru w bibliotece opactwa.<br><br>Dzięki audytowi okazało się, jak dużo można zrobić i jak ogromne są straty ciepła i pieniędzy, mimo że własny las dostarczał niemal darmowy opał. Kiedy pojawiła się możliwość dofinansowania z NFOŚ dokumentacja projektowa była już gotowa. Dofinansowanie dawało duży zastrzyk pieniędzy, ale konieczny był wkład własny. Wspólnota zdecydował o bankowej pożyczce. „Zupełnie nie zdawałem sobie sprawy, w co my w ogóle wchodzimy” śmieje się opat, ale z inwestycji jest bardzo zadowolony. Wszystko udało się zrealizować i wiele osób bardzo się zaangażowało- „Sami nigdy nie dalibyśmy rady” podkreśla. W 1,5 roku wykonano wymianę stolarki, ocieplenia, nową instalację wodno–kanalizacyjną oraz pompy ciepła i panele fotowoltaiczne. Panele niewidoczne dla odwiedzających stanęły w nieużywanej części ogrodu. Brat Izaak prowadzi mnie do piwnicy: „Wcześniej było tu czarno od węglowego pyłu, a bracia mieli dyżury od 5 rano do późnego wieczora co 45 min., by obsłużyć piec. Teraz mamy eleganckie, bezobsługowe urządzenia. W budynkach jest ciepło i sucho, a grzyb został zlikwidowany”- mówi z satysfakcją. Na ogrzewanie samego kościoła konserwator nie wydał zgody, gdyż mogłoby to zaszkodzić zabytkowemu drewnianemu wyposażeniu. Ocieplono jednak stropy, okna i drzwi, a to dużo zmieniło.<br><br>>Minął już trzeci sezon grzewczy i wszystko działa idealnie. Urządzenia mają nawet 30 letnią gwarancję. Koszty ogrzewania, ciepłej wody i prądu zmalały z co najmniej 200 tys. do ok.50 tys. Grupy przez cały rok korzystają z Domu Gości, a ojciec Maksymilian Nawara zwierzchnik Kongregacji  mówi mi radośnie „Teraz rano zaczynam od modlitwy – Boże jak ja Ci dziękuję za to ciepło i że nie muszę już przebierać się w osmolony kombinezon i wędzić w kotłowni!”.</p>",
-            fullTitle: "Lubiń, opactwo o.o. Benedyktynów - klasztor, dom gości"
-        },
-        {
-            title: "kompleks pojezuicki",
-            text: "Rawa Mazowiecka",
-            content: "<p>Do kościoła NPNMP w Rawie Mazowieckiej trafiłam dzięki namowie księdza proboszcza z Koluszek. Ks. Grzegorz z dużą wdzięcznością mówił o proboszczu z Rawy, który zrobił imponujące remonty, a jemu chętnie służył radą przy termomodernizacji. Wybrałam się więc tam od razu i bez zapowiedzi podjechałam pod dom parafialny będący częścią zespołu pojezuickich budynków z XVII wieku. Pierwszą osobą, którą spotkałam był sympatyczny pan Tadeusz „To miejsce otwarte dla wszystkich, zawsze można tu zostawić auto” powitał mnie. Proboszcz miał wkrótce przyjechać, a pan Tadeusz okazał się wdzięcznym rozmówcą i doskonałym przewodnikiem, więc czas wykorzystaliśmy na wspólny spacer. Pan Tadeusz jest od lat członkiem dwudziestoosobowej Rady Finansowej parafii i przy termomodernizacji budynków był od początku. Do tak ogromnego przedsięwzięcia potrzeba było wielu osób i Rada stanowiła niezbędne wsparcie dla proboszcza. Zdjęcie zgromadzonych członków wisi przy wejściu do kościoła. Różnorodna grupa osób zaangażowała wiele swoich sił i czasu, by zbierać pieniądze i wspierać inwestycje w parafii. Teraz tak jak pan Tadeusz są z tego ogromnie dumni. Kościół i Kolegium są odrestaurowane, barokowa fasada przyciąga wzrok, a otwarte w koło bramy zapraszają do korzystania ze wspólnych przestrzeni. Według zamysłu proboszcza ks. Bogumiła Karpa ma to być miejsce spotkań, pielgrzymek i różnorodnych wydarzeń. Oprócz pięknego kościoła zwiedzić można muzeum, dzwonnicę z punktem widokowym i krypty. Na zewnątrz  powstał Ogród Dialogu z miejscem na modlitwę i drogą krzyżową, ale i z placem zabaw,  muzycznymi ławkami oraz altaną z prawdziwym piecem na pizzę. Wszystko otwarte i dostępne dla każdego. Pan Tadeusz przyznał, że chętnie spotyka się tu ze znajomymi, a dzieciakom proponuje gry planszowe i sprzęt sportowy. W parafii działa wiele grup, siostry Nazaretanki mają swój dom zakonny,  kotłownia w piwnicy została zamieniona na Centrum Spotkań, a najwyższa kondygnacja kolegium służy od początku wojny kilku ukraińskim rodzinom. Wszyscy, którzy przyczynili się do rozkwitu tego miejsca otrzymali podziękowania w postaci wmurowanych w ogrodzenie cegiełek. „A tu też jest moja cegiełka” z uśmiechem wskazuje pan Tadeusz. O samej termomodernizacji opowiedział mi już ks. Bogumił, który przed dyżurem w kancelarii zdążył mnie jeszcze oprowadzić po muzeum i budynku kolegium. „Podglądałem rozwiązania, rozmawiałem w różnych miejscach, połączyłem pomysły” wyjaśniał mi opowiadając o przedsięwzięciu. Prace termomodernizacyjne objęły ocieplenie stropów, zaizolowanie fundamentów, wymianę stolarki okiennej na okna stalowe i zabezpieczenie termiczne witraży oraz  zainstalowanie ogrzewania podłogowego. Całość obsługuje kotłownia z pompami ciepła wspieranymi przez panele fotowoltaiczne. Dzięki temu udało się osuszyć wnętrze kościoła i znacznie obniżyć koszty ogrzewania i prądu. Inwestycja została zrealizowana z dotacji państwowych i samorządowych oraz licznych darowizn od firm i osób prywatnych oraz wkładu własnego z pożyczki bankowej. Wyzwanie czasem przerastało siły „ Był moment, że wkład własny wzrósł ponad dwukrotnie i wtedy niemal zupełnie zwątpiłem w powodzenie inwestycji” opowiada proboszcz i kontynuuje „ Wszystko od początku powierzaliśmy św. Józefowi, więc stanąłem przed jego kapliczką i pytałem, co robić. Zdecydowaliśmy, by nie wycofywać się.” Warto było, bo teraz wkład własny jest systematycznie spłacany dzięki szczodrości parafian i przyjaciół parafii, zespół pojezuicki jest chlubą całego miasta. A niespodziewaną nagrodą za podjęty wysiłek było odnalezienie za ołtarzem głównym prawdziwego skarbu – złotej królewskiej korony, którą można podziwiać w parafialnym muzeum.</p>",
-            fullTitle: "Rawa Mazowiecka, parafia pw. Niepokalanego Poczęcia Najświętszej Maryi Panny oraz Kolegium Pojezuickie - kościół i budynki parafialne."
-        },
-        {
-            title: "Kościół Pasywny",
-            text: "Nowy Targ",
-            content: "<p>Odwiedziliśmy go w czerwcu 2023 r. Ten kościół to absolutna rewelacja! To zdecydowanie najbardziej energooszczędna inwestycja kościelna, jaką znamy!!! Pierwszy pasywny kościół w Europie, zbudowany we współpracy z prestiżowym Passive Hause Institute w Darmstadt. Bardzo ładny, przemyślany projekt nawiązujący do podhalańskiej tradycji. Świetna realizacja!<br><br>Kościół stoi od 12 lat, ale wygląda jak dopiero co oddany do użytku. Wszystkie urządzenia działają bezawaryjnie i są bardzo proste w obsłudze, czym chwalił się nam kościelny. On też zdradził nam tajemnicę powstania budynku z tak nowoczesnymi rozwiązaniami – to młody proboszcz, który miał wiedzę, siły i odwagę, by projekt zrealizować. Ksiądz proboszcz Jan Karlak jest gospodarzem parafii od samych jej początków. „Pasywny kościół dla aktywnych wiernych”  to hasło, które oddaje jego marzenie i wizję wspólnoty kościoła XXI w. Z aktywności wiernych chyba może się cieszyć, bo w parafii działa kilkanaście grup, a na Facebooku nie brakuje filmików i zdjęć z różnych wydarzeń. Rozmowę z nami ks. Karlak podsumował prosto: „To rozwiązanie jest tak rewelacyjne, że ja zwyczajnie nie mam takiego problemu jak utrzymanie kościoła”. Rzeczywiście - grzejnikami są ludzie i wpadające przez południowe okna słońce, dzięki czemu przez cały rok właściwie nie potrzeba nakładów na ogrzewanie. Trudno uwierzyć? A jednak tak właśnie działają budynki pasywne. Odzyskiwanie ciepła i system oczyszczania powietrza pozwalają na utrzymanie wewnątrz odpowiedniej temperatury (min.12 st. C zimą) i zdrowego klimatu. Jest też cicho dzięki świetnej izolacji oraz czysto, bo kurz nie wpada przez wentylację. Tylko w najchłodniejszych dniach używana jest zasilająca plebanię pompa ciepła, która może dogrzewać salki kościelne. Dodatkowo od zeszłego roku, decyzją Rady Parafialnej, na dachu zainstalowano panele fotowoltaiczne. Dzięki nim prąd jest całkowicie darmowy i rachunki spadły niemal do zera. Parafia jest sanktuarium Jana Pawła II i miejscem licznych wydarzeń kościelnych i kulturalnych. Dwóch ministrantów, których spotkaliśmy w zakrystii opowiadało, że przyjeżdża tu dużo grup, ogólnie jest fajnie i z takiego nowoczesnego kościoła są dumni<br><br>Byliśmy, modliliśmy się wewnątrz i bez dwóch zdań trzeba przyznać, że jest komfortowo.<br><br>Jeśli zatem budować nowe kościoły, ale też jakiekolwiek inne budynki, to rozwiązania pasywne wydają się idealne. Zalety można tylko wymieniać:<br><br></p><ul><li>stała, komfortowa temperatura o każdej porze roku</li><li>czyste, świeże powietrze wewnątrz</li><li>czysta, odporna na zniszczenie przestrzeń</li><li>trwałość urządzeń i prostota ich obsługi</li><li>minimalne, a nawet zerowe rachunki za ogrzewanie i oświetlenie</li></ul><p>Każdego, kto będzie w Nowym Targu lub w okolicy zachęcamy, by sam odwiedził parafię św. Jana Pawła II i choć chwilę spędził w cichym i przyjaznym wnętrzu kościoła.</p>",
-            fullTitle: "Nowy Targ - Parafia św. Jana Pawła II - kościół pasywny (pierwszy w Europie)"
-        },
-    ]
-
+const Guide = () => {
     return (
-        <PageLayout bg="dobre-przyklady" title="Dobre Przykłady">
+        <PageLayout bg="poradnik" title="Poradnik">
             <div>
-                <p className="text-base font-bold sm:text-lg">Nasz zespół programu CDCK odwiedził różne miejsca w Polsce, by zobaczyć jak w praktyce udała się termomodernizacja budynków kościelnych i prywatnych. Udanych realizacji jest naprawdę wiele! Zapraszamy do zapoznania się z przykładami poniżej i do zgłaszania nam kolejnych. Chcemy, by dobre przykłady zachęcały do działań i zmiany naszego świata na lepsze!</p>
+                <h3 className="font-extrabold text-xl sm:text-2xl mb-4 text-green">PRAKTYCZNY PORADNIK DLA PARAFII</h3>
+                <h2 className="font-extrabold text-lg sm:text-xl mb-4">CZYLI DLA WSZYSTKICH ODPOWIEDZIALNYCH I ZAANGAŻOWANYCH W TO, BY NASZE KOŚCIOŁY I BUDYNKI PARAFIALNE BYŁY CIEPŁE, A ICH UTRZYMANIE MNIEJ KOSZTOWNE.</h2>
+                <p className="font-bold text-base sm:text-lg mb-4">Oszczędzanie energii cieplnej</p>
+                <p className="text-base sm:text-lg">W kościołach i wszystkich budynkach parafialnych warto zacząć o rzeczy najprostszych i nie wymagających dużych nakładów:</p>
+                <ul className="ul-primary text-base sm:text-lg mt-2 mb-8">
+                    <li>W drzwiach zamontuj samozamykacze, załóż kotary.</li>
+                    <li>Uszczelnij okna i drzwi. Ręką wyczujesz, gdzie wieje. Wyreguluj okna, załóż nowe uszczelki. Może przydać się „fachowiec”, który zna się na regulacji okien.</li>
+                    <li>W pomieszczeniach ogrzewanych obniż temperaturę w nocy i w porach, w których nie używasz tych pomieszczeń. Korzystna dla zdrowia temperatura to 19-20 st.. Każdy 1 st.C mniej to oszczędność 5-6 % energii.</li>
+                    <li>Pilnuj, by w pomieszczeniach nie zostawiać uchylonych lub nie domkniętych okien. Wietrz krótko, ale intensywnie, zawsze przy zakręconych grzejnikach. Szeroko otwieraj okna na 2-3 minuty, by pomieszczenie nie zdążyło się wychłodzić.</li>
+                    <li>Pamiętaj by odpowietrzyć kaloryfery przed sezonem grzewczym.</li>
+                    <li>Zamontuj ekrany  zagrzejnikowe. Ekran odbija nawet do 90% ciepła generowanego przez tylną część grzejnika.</li>
+                </ul>
+                <p className="text-base sm:text-lg">Największą oszczędność na długie lata przyniesie zrobienie kompleksowej <span className="font-bold text-green">TERMOMODERNIZACJI</span> budynków parafialnych , a także choćby częściowa samego kościoła.</p>
+                <p className="text-base sm:text-lg mb-2">Termomodernizacja polega na poprawie wentylacji, ociepleniu ścian, stropów, podłóg oraz wymianie zużytej stolarki (w oknach witrażowych stosuje się specjalne zabezpieczenie termiczne), a także usprawnieniu systemu ogrzewania (wymiana systemu ogrzewania na bardziej efektywny i ekologiczny).</p>
+                <p className="text-base sm:text-lg mb-2">Dzięki termomodernizacji można zużywać kilkadziesiąt procent mniej energii na ogrzewanie.</p>
+                <p className="text-base sm:text-lg mb-2">Zawsze warto zacząć od AUDYTU ENERGETYCZNEGO, który proponuje rozwiązania techniczne, zakresy i etapy prac oraz źródła dofinansowań.</p>
+                <p className="text-base sm:text-lg mb-4">Na termomodernizację budynków przeznaczane są coraz większe środki państwowe, gdyż działanie to jest jednym z priorytetów w Polsce. Srodkami dysponuje przede wszystkim Narodowy Fundusz Ochrony Środowiska i Gospodarki Wodnej oraz Wojewódzkie Fundusze Ochrony Środowiska i Gospodarki Wodnej.</p>
+                <p className="text-base sm:text-lg">Oszczędzanie energii elektrycznej i wody</p>
+                <ol className="ol-primary text-base sm:text-lg mt-2 mb-8">
+                    <li>Wymień całe oświetlenie na energooszczędne żarówki LED. Mają nawet kilkadziesiąt razy dłuższą żywotność niż stare żarówki, a wymiana jednej starej żarówki na ledową to oszczędność kosztów energii ok. 120 zł rocznie.</li>
+                    <li>Zamontuj czujnik zmierzchowy przy oświetleniu zewnętrznym, a w korytarzach i przedpokojach czujniki ruchu.</li>
+                    <li>Wyłączaj urządzenia elektryczne, gdy ich nie używasz i nie zostawiaj urządzeń w trybie czuwania. Każda zapalona dioda to strata energii  - stosuj listwy z opcją wyłączania.</li>
+                </ol>
+                <p className="text-base sm:text-lg">Ładowarki wyjmuj z gniazdek.</p>
+                <ol className="ol-primary ol-start-4 text-base sm:text-lg mt-2 mb-8">
+                    <li>Komputer wyłącz, gdy przerywasz pracę na dłużej niż 15 min. Zrezygnuj z wygaszacza. Jeśli możesz wymień ekran na mniejszy.  Używaj raczej laptopa niż komputera stacjonarnego, który średnio zużywa 4 razy więcej energii.</li>
+                    <li>Drukarkę włączaj dopiero przed jej użytkowaniem i wyłączaj po użyciu.</li>
+                    <li>Używaj mniejszej mocy odkurzacza. Regularnie opróżniaj go, bo gdy jest całkowicie zapełniony, zużycie energii rośnie o ok. 50%!</li>
+                    <li>Zamontuj perlatory na kranach z wodą użytkową.</li>
+                    <li>	Gromadź wodę deszczową do podlewania ogrodu. Istnieją korzystne dotacje na zamontowanie zbiorników lub systemów rozprowadzania deszczówki.</li>
+                </ol>
+                <p className="text-base sm:text-lg mb-4">Potrzebujesz wsparcia i pomocy w sprawie termomodernizacji budynków parafialnych skontaktuj się z nami <Link className="font-bold text-green underline" href="@mailto:cieplydom@laudatosimovement.org">cieplydom@laudatosimovement.org</Link></p>
+                <Link className="font-bold text-green underline" target="_blank" href="/poradnik-dla-parafii.pdf">PORADNIK DLA PARAFII</Link>
             </div>
-            <div className="flex flex-wrap gap-4">
-                {examples.map((el) => (
-                    <ExmapleButton key={el.title} {...el} />
-                ))}
+            <div>
+                <h3 className="font-extrabold text-xl sm:text-2xl mb-4 text-green">PRAKTYCZNY PORADNIK DLA PARAFIAN</h3>
+                <h2 className="font-extrabold text-lg sm:text-xl mb-4">JAK OSZCZĘDZAĆ ENERGIĘ, DBAĆ O ŚRODOWISKO I MIEĆ WIĘCEJ ŚRODKÓW NA DOBRE CELE.</h2>
+                <p className="font-bold text-base sm:text-lg mb-4"> Zatrzymaj ciepło w domu!</p>
+                <p className="text-base sm:text-lg">Sprawdź okna i drzwi, czy są szczelne. Ręką wyczujesz, gdzie wieje. Wyreguluj okna, załóż nowe uszczelki. Ociepl drzwi, załóż kotarę.  Może warto zainwestować w wymianę stolarki.</p>
+                <ul className="ul-primary text-base sm:text-lg mt-2 mb-8">
+                    <li>Podłogę przykryj dywanem, a okna zasłaniaj na noc grubszymi zasłonami lub roletami.</li>
+                    <li>W słoneczne dni odsłaniaj okna i pozwalaj, by naturalne ciepło nagrzało pomieszczenia.</li>
+                    <li>Wietrz krótko, ale często i intensywnie, zawsze przy zakręconych grzejnikach. Szeroko otwieraj okna na 2-3 minuty, by pomieszczenie nie zdążyło się wychłodzić,</li>
+                    <li>Pamiętaj by odpowietrzyć kaloryfery przed sezonem grzewczym.</li>
+                    <li>Odsuń meble od grzejnika, niczym go nie zakrywaj, nie wieszaj na nim prania, by ciepło mogło krążyć swobodnie. Regularnie wycieraj kurz z grzejników.</li>
+                    <li>Zamontuj ekran zagrzejnikowy. Ekran odbija nawet do 90% ciepła generowanego przez tylną część grzejnika.</li>
+                    <li>W pokoju dziennym utrzymuj korzystną dla zdrowia temperaturę 19-20 st. W sypialni i kuchni obniż ją do 16-18 st. Wychodząc do pracy, ustaw temperaturę na 16 stopni. Każdy 1 st.C mniej to oszczędność 5-6 % energii. Gdy odczuwasz chłód załóż cieplejsze ubrania.</li>
+                </ul>
+                <p className="text-base sm:text-lg">Te proste działania nie wymagają większych inwestycji, ale mogą znacząco obniżyć rachunki.</p>
+                <p className="text-base sm:text-lg mb-2">Jednak największą oszczędność na długie lata przyniesie zrobienie kompleksowej <span className="font-bold text-green">TERMOMODERNIZACJI</span> domu lub mieszkania.</p>
+                <p className="text-base sm:text-lg mb-2">Termomodernizacja polega na poprawie wentylacji, ociepleniu ścian, stropów, podłóg oraz wymianie zużytej stolarki, a także usprawnieniu systemu ogrzewania (wymiana pieca na efektywny i ekologiczny).</p>
+                <p className="text-base sm:text-lg mb-2">Dzięki temu można zużywać kilkadziesiąt procent mniej energii na ogrzewanie.</p>
+                <p className="text-base sm:text-lg mb-2">Zawsze warto zacząć od <span className="font-bold text-green">AUDYTU ENERGETYCZNEGO,</span> który proponuje rozwiązania techniczne, zakresy i etapy prac oraz źródła dofinansowań.</p>
+                <p className="text-base sm:text-lg mb-8">Na termomodernizacje budynków przeznaczone są bardzo duże środki państwowe, które dofinansowują remonty prywatnych domów nawet do kwoty 135 tys. zł.</p>
+                <p className="text-base sm:text-lg mb-2">Zatrzymaj energię elektryczną!</p>
+                <p className="text-base sm:text-lg mb-8">Jeśli kupujesz nowy sprzęt zawsze wybieraj ten o wysokiej klasie energetycznej A++ ! Kupując energooszczędną pralkę czy lodówkę zaoszczędzisz rocznie ok. 300 zł.</p>
+                <p className="text-base sm:text-lg text-green font-bold">OŚWIETLENIE</p>
+                <ul className="ul-primary text-base sm:text-lg mt-2 mb-8">
+                    <li>Jak najwięcej korzystaj ze światła dziennego – jest najzdrowsze i darmowe</li>
+                    <li>Pamiętaj o wyłączaniu oświetlenia, gdy wychodzisz z pomieszczenia czy z mieszkania.</li>
+                    <li>Używaj oświetlenia punktowego, tam gdzie faktycznie go potrzebujesz.</li>
+                    <li> Stosuj wyłącznie energooszczędne żarówki LED. Mają nawet kilkadziesiąt razy dłuższą żywotność niż stare żarówki, a wymiana jednej starej żarówki na ledową to oszczędność kosztów energii ok. 120 zł rocznie.</li>
+                </ul>
+                <p className="text-base sm:text-lg text-green font-bold">SPRZĘTY RTV</p>
+                <ul className="ul-primary text-base sm:text-lg mt-2 mb-8">
+                    <li>Wyłączaj nieużywany sprzęt z kontaktu i nie zostawiaj urządzeń w trybie czuwania. Każda zapalona dioda to strata energii - stosuj listwy z opcją wyłączania.</li>
+                    <li>Ładowarki wyjmuj z gniazdek.</li>
+                    <li>Telewizor wyłączaj, gdy opuszczasz pomieszczenie. Najbardziej oszczędne są telewizory LED i te z mniejszym ekranem.</li>
+                    <li>Komputer wyłącz, gdy przerywasz pracę na dłużej niż 15 min. Zrezygnuj z wygaszacza. Jeśli możesz wymień ekran na mniejszy. Używaj raczej laptopa niż komputera stacjonarnego, który średnio zużywa 4 razy więcej energii.</li>
+                    <li>Drukarkę włączaj dopiero przed jej użytkowaniem i wyłączaj po użyciu.</li>
+                </ul>
+                <p className="text-base sm:text-lg text-green font-bold">SPRZĘTY AGD</p>
+                <ul className="ul-primary text-base sm:text-lg mt-2 mb-8">
+                    <li>Lodówkę regularnie rozmrażaj i myj. Już 5 mm lodu oznacza wzrost zużycia energii o 20%! Otwieraj ją rzadko i na krótko. Wkładaj potrawy ostudzone, a te które wyjmujesz z zamrażarki rozmrażaj w lodówce. Lodówkę stawiaj z dala od bezpośredniego słońca i  dalej od źródeł ciepła (kuchenka, pralka, grzejnik).</li>
+                    <li>Lodówki nowego typu (samorozmrażające się) utrzymuj w czystości; ustaw temperaturę w opcji eko (najlepsza temp. to 4-6 st)</li>
+                    <li>Pralkę napełniaj w całości, pierz najczęściej w 30 maks. 40 st.. Używaj skróconych programów do oczyszczania mniej zabrudzonych ubrań.</li>
+                    <li>Używaj mniejszej mocy odkurzacza. Regularnie opróżniaj go, bo gdy jest całkowicie zapełniony, zużycie energii rośnie o ok. 50%!</li>
+                    <li>Prasuj tylko, gdy jest to konieczne, najlepiej większą ilość ubrań od razu, by nie rozgrzewać żelazka wielokrotnie</li>
+                    <li> W czajniku gotuj dokładnie tyle wody, ile zużyjesz od razu</li>
+                    <li>Potrawy gotuj pod szczelną przykrywką, nie przekraczaj temperatury 100 st., nie sól wody przed zagotowaniem. Zainwestuj w szybkowar.</li>
+                    <li> Dopasowuj wielkość garnków do palnika. Utrzymuj dna garnków w czystości.</li>
+                    <li>W piekarniku używaj funkcji termoobiegu,  nie otwieraj go w czasie pracy i wyłączaj 5-10  min przed końcem pieczenia – temperatura w nim utrzyma się i dopiecze potrawy.</li>
+                    <li> Mniejsze ilości potraw podgrzewaj w mikrofalówce. Utrzymuj ją w czystości.</li>
+                </ul>
+                <Link className="font-bold text-green underline" target="_blank" href="/poradnik-dla-parafian.pdf">PORADNIK DLA PARAFIAN</Link>
             </div>
-            {examples.map((el) => (
-                <SingleExample key={el.title} {...el} />
-            ))}
-            <p className="text-base sm:text-lg">zgłoś dobre rozwiązanie. napisz do nas na <Link target="_blank" className="text-green underline font-bold" href={""}>cieplydom@laudatosimovement.org</Link></p>
         </PageLayout>
     )
 }
 
-export default Exmaples
+export default Guide

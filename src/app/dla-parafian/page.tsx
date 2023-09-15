@@ -1,6 +1,12 @@
 import PageLayout from "@/components/PageLayout"
 import { urls } from "@/utilis/urls"
 import Link from "next/link"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Ciepły dom - Ciepły kościół | Dla Parafian',
+    description: '„[…] choć istniejący porządek świata nie jest w stanie wziąć na siebie odpowiedzialności, to organizacja lokalna może coś zmienić. Tam bowiem może zrodzić się większa odpowiedzialność, silne poczucie wspólnoty, szczególna zdolność do troski i bardziej wielkoduszna kreatywność, głęboka miłość do swej ziemi. Tam myśli się również o tym, co zostanie przekazane dzieciom i wnukom.„ (Papież Franciszek, encyklika Laudato si’, 179)',
+  }
 
 const ForParishioners = () =>{
     return(

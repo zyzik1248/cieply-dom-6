@@ -8,8 +8,11 @@ import Head from 'next/head'
 const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ciepły dom - Ciepły kościół',
-  description: 'Program „Ciepły Dom - Ciepły Kościół” powstał, by promować solidarne wspólnoty parafialne, w których razem zadbamy o ciepło w naszych domach i parafiach, oraz wesprzemy tych, którym grozi ubóstwo energetyczne.',
+  keywords: [
+    "ciepły",
+    "dom",
+    "kościół"
+  ],
   icons:{
     icon: "/favicon.png"
   }

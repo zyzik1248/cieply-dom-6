@@ -1,5 +1,11 @@
 import PageLayout from "@/components/PageLayout"
 import Image from "next/image"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Ciepły dom - Ciepły kościół | O Programie',
+    description: 'Jako społeczeństwo stajemy obecnie przed ogromnymi wyzwaniami dotyczącymi zaopatrywania się w energię w codziennym życiu. Wojna w Ukrainie, kryzys energetyczny i próby zatrzymania coraz wyraźniejszych zmian klimatu powodują gwałtowne drożenie paliw – węgla, gazu, ropy, a nawet drewna – które do tej pory były podstawą ogrzewania wielu naszych domów i źródłem energii elektrycznej.',
+  }
 
 const About = () => {
     return (

@@ -2,6 +2,12 @@ import DownloadItem from "@/components/DownloadItem";
 import MaterialsForm from "@/components/MaterialsForm";
 import PageLayout from "@/components/PageLayout";
 import { MaterialQuery } from "@/types";
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Ciepły dom - Ciepły kościół | Do Pobrania',
+    description: 'Do pobrania',
+  }
 
 async function getData() {
   try {

@@ -1,6 +1,12 @@
 import PageLayout from "@/components/PageLayout"
 import { urls } from "@/utilis/urls"
 import Link from "next/link"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Ciepły dom - Ciepły kościół | Dla Parafii',
+    description: '"Potrzebna jest dziś nowa « wyobraźnia miłosierdzia», której przejawem będzie nie tyle i nie tylko skuteczność pomocy, ale zdolność bycia bliźnim dla cierpiącego człowieka, solidaryzowania się z nim, tak aby gest pomocy nie był odczuwany jako poniżająca jałmużna, ale jako świadectwo braterskiej wspólnoty dóbr." JPII',
+  }
 
 const ForParish = () => {
     return (
@@ -8,7 +14,7 @@ const ForParish = () => {
             <div>
                 <p className="font-bold text-base sm:text-lg m-0">"Potrzebna jest dziś nowa « wyobraźnia miłosierdzia», której przejawem będzie nie tyle i nie tylko skuteczność pomocy, ale zdolność bycia bliźnim dla cierpiącego człowieka, solidaryzowania się z nim, tak aby gest pomocy nie był odczuwany jako poniżająca jałmużna, ale jako świadectwo braterskiej wspólnoty dóbr." <span className="text-sm sm:text-base">JPII</span></p>
                 <p className="text-base sm:text-lg m-0 mt-8">
-                    Projekt “Ciepły Dom - Ciepły Kościół” w swojej istocie ma być działaniem wspólnototwórczym, uruchamiającym  “wyobraźnię miłosierdzia” w trosce o wspólne ciepłe przestrzenie kościoła oraz o członków naszej wspólnoty, zwłaszcza w okresie jesienno-zimowym
+                    Projekt “Ciepły Dom - Ciepły Kościół” w swojej istocie ma być działaniem wspólnototwórczym, uruchamiającym  “wyobraźnię miłosierdzia” w trosce o wspólne ciepłe przestrzenie kościoła oraz o członków naszej wspólnoty, zwłaszcza w okresie jesienno-zimowym.
                     <br></br><br></br>
                     Zapraszamy do współpracy ekonomów diecezjalnych, proboszczów, przełożonych zakonnych i prokurentów, członków rad parafialnych i aktywnych członków wspólnot działających w Kościele.
                     <br></br><br></br>

@@ -1,5 +1,11 @@
 import PageLayout from "@/components/PageLayout"
 import Image from "next/image"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Ciepły dom - Ciepły kościół | O nas',
+    description: 'Światowy Ruch Katolików na rzecz Środowiska jest polskim przedstawicielstwem Laudato si’ Movement (LSM; dawniej Global Catholic Climate Movement – GCCM). , Ruch zrzesza ponad 900 różnych organizacji, stowarzyszeń, zakonów i innych inicjatyw, a także wolontariuszy z całego świata zaangażowanych na rzecz ekologii integralnej. Działamy w bliskiej współpracy z watykańską Dykasterią ds. Integralnego Rozwoju Człowieka, w duchu encykliki Laudato si’ papieża Franciszka, szerząc jej przesłanie w Kościele i zachęcając do wprowadzania w życie.',
+  }
 
 const About = () => {
     return (
