@@ -11,18 +11,17 @@ interface IQuery {
 }
 
 async function getData(query: IQuery) {
-    try{
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/indexes/search`, {
-            method: 'POST',
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/allpages`, {
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(query),
         });
-    
+
         const json = await response.json();
         return json
-    } catch(error){
+    } catch (error) {
         console.log(error)
     }
 }
@@ -31,22 +30,24 @@ const Search = () => {
     const router = useRouter()
     const searchParams = useSearchParams();
     const query = searchParams.get("s") || ""
-    const [data, setData] = useState<IndexQuery[]>([]);
+    const [urls, setUrls] = useState<string[]>([]);
 
     useEffect(() => {
-        async function fetchData() {
-            const data = await getData({ query })
-            setData(data)
-        }
-
         if (!query) {
             router.push("/");
         }
-
-        // if (!data.length) {
-            fetchData();
-        // }
     }, [query])
+
+    useEffect(() => {
+        async function fetchData() {
+            const urls = await getData({ query })
+            setUrls(urls)
+        }
+
+        if (!urls.length) {
+            fetchData();
+        }
+    }, [])
 
     return (
         <div className="max-w-normal m-auto my-[100px] px-big">
@@ -54,7 +55,7 @@ const Search = () => {
                 <>
                     <h2 className='text-xl font-extrabold mb-[50px] sm:mb-[100px] sm:text-2xl'>Wynik wyszukiwania dla "{query}"</h2>
                     <div className="flex flex-col gap-10">
-                        {data.map(page=><FindSingle key={page.slug} {...page}/>)}
+                        {urls.map(url => <FindSingle key={url} url={url} query={query}/>)}
                     </div>
                 </>
 

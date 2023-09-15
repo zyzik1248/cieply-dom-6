@@ -1,10 +1,8 @@
 export interface IndexQuery{
-    id: string
     name: string
     description: string
     slug: string
     content: string
-    longSlug: string
 }
 
 export interface MaterialQuery{
