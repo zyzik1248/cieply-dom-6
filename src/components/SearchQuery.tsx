@@ -10,7 +10,7 @@ interface Props {
     urls: string[]
 }
 
-const Search:React.FC<Props> = ({urls}) => {
+const SearchQuery:React.FC<Props> = ({urls}) => {
     const router = useRouter()
     const searchParams = useSearchParams();
     const query = searchParams.get("s") || ""
@@ -29,8 +29,8 @@ const Search:React.FC<Props> = ({urls}) => {
                     <h2 className='text-xl font-extrabold mb-[50px] sm:mb-[100px] sm:text-2xl'>Wynik wyszukiwania dla "{query}"</h2>
                     <div className="flex flex-col gap-10">
                         {urls.map(url => (
-                            <Suspense fallback={<></>}>
-                                <FindSingle key={url} url={url} query={query}/>
+                            <Suspense key={url} fallback={<></>}>
+                                <FindSingle url={url} query={query}/>
                             </Suspense>
                         ))}
                     </div>
@@ -41,4 +41,4 @@ const Search:React.FC<Props> = ({urls}) => {
     )
 }
 
-export default Search
+export default SearchQuery
