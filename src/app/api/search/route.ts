@@ -14,19 +14,6 @@ export async function POST(req: Request) {
   try {
     const { query, url } = await req.json();
 
-    // const response = await fetch(
-    //   `${process.env.NEXT_PUBLIC_SITE_URL}/allpages`,
-    //   {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
-
-    // const pagesUrl = await response.json();
-
-    // for(let i=0; i<pagesUrl.length; i++){
     const resp = await fetch(url);
 
     const html = await resp.text();

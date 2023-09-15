@@ -5,7 +5,7 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: 'Ciepły dom - Ciepły kościół | Poradnik',
-    description: 'PRAKTYCZNY PORADNIK DLA PARAFII CZYLI DLA WSZYSTKICH ODPOWIEDZIALNYCH I ZAANGAŻOWANYCH W TO, BY NASZE KOŚCIOŁY I BUDYNKI PARAFIALNE BYŁY CIEPŁE, A ICH UTRZYMANIE MNIEJ KOSZTOWNE.',
+    description: 'praktyczny poradnik dla parafii czyli dla wszystkich odpowiedzialnych i zaangażowanych w to, by nasze kościoły i budynki parafialne były ciepłe, a ich utrzymanie mniej kosztowne.',
   }
 
 const Guide = () => {
