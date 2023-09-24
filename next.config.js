@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverActions: true,
-  },
+  assetPrefix: process.env.NEXT_PUBLIC_SITE_URL,
+  output: "export",
+  trailingSlash: true,
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
   generateRobotsTxt: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",

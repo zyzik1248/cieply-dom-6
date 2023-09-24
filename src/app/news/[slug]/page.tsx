@@ -2,8 +2,6 @@ import NewsDate from "@/components/NewsDate";
 import { NewsQuery } from "@/types";
 import { Metadata, ResolvingMetadata } from "next";
 
-export const dynamicParams = false;
-
 type Props = {
   params: { id: string }
   searchParams: { [key: string]: string | string[] | undefined }
@@ -11,19 +9,42 @@ type Props = {
 
 export async function generateStaticParams() {
   try {
-    const newsResponse = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/news`, {
-      method: 'GET',
+    const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "", {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      next: { revalidate: false },
-      cache: "no-store"
+      body: JSON.stringify({
+        query: `
+            query GetPluralNews {
+              pluralNews(orderBy: postedDate_ASC) {
+                id
+                title
+                date
+                postedDate
+                slug
+                description {
+                    html
+                    text
+                }
+                content {
+                  html
+                  text
+                }
+                imagePreview {
+                  id
+                  url
+                }
+              }
+            }`,
+      }),
     });
 
-    const json:  NewsQuery[] = await newsResponse.json();
-    const data = json.map((el: NewsQuery) => { return { slug: el.slug } })
-
-    return data;
+    const json = await response.json();
+    const data = json.data.pluralNews as NewsQuery[];
+    return data.map(post => (
+      { slug: post.slug }
+    ))
   } catch (error) {
     console.log(error)
     return []
@@ -33,17 +54,43 @@ export async function generateStaticParams() {
 
 async function getData(slug: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/news/${slug}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      // next: { revalidate: false },
-      cache: "no-store"
-    });
-
+    const response = await fetch(
+      process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `
+            query GetNews($slug: String){
+                news(where: {slug: $slug}) {
+                id
+                title
+                date
+                postedDate
+                slug
+                description {
+                    html
+                    text
+                }
+                content {
+                  html
+                  text
+                }
+                imagePreview {
+                  id
+                  url
+                }
+              }
+            }`,
+          variables: { slug },
+        }),
+      }
+    );
     const json = await response.json();
-    return json as NewsQuery;
+    const data = json.data.news as NewsQuery;
+    return { ...data }
   } catch (error) {
     console.log(error)
     return null
@@ -59,7 +106,7 @@ export async function generateMetadata(
   let desc = data?.description.text || ""
   desc = desc.replace(/\\n/g, " ")
 
-  return{
+  return {
     title: `Ciepły dom - Ciepły kościół | ${data?.title}`,
     description: `${desc}`
   }
@@ -68,6 +115,7 @@ export async function generateMetadata(
 
 const News: React.FC<any> = async ({ params, searchParams }) => {
   const props = await getData(params.slug)
+  console.log(props)
 
   return (
     <div className="max-w-normal relative px-big mt-[50px] mb-[100px]">

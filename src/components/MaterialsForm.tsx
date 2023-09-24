@@ -3,9 +3,7 @@ import { redirect } from 'next/navigation'
 
 const MaterialsForm: React.FC = () =>{
     
-    async function create(formData: FormData) {
-        'use server'
-     
+    async function create(formData: FormData) {     
         const data: any = {}
         
         for (const [key, value] of formData) {

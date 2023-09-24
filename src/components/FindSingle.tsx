@@ -3,6 +3,7 @@
 import { IndexQuery } from "@/types"
 import Link from "next/link"
 import React, { useEffect, useState } from "react"
+import { searchPage } from "@/utilis/search";
 
 interface Props{
     url: string
@@ -10,20 +11,12 @@ interface Props{
 }
 
 async function getData({url, query} : Props) {
-    try{
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/search`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({url, query})
-        });
-
-        const json: IndexQuery = await response.json();
-        return json
-    } catch(error){
-        console.log(error)
-        return {}
+    try { 
+      const data = searchPage({url, query});
+      return data   
+    } catch (error){
+      console.log(error)
+      return {}
     }
 }
 
