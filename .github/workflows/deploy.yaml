@@ -22,3 +22,11 @@ jobs:
         env:
             NEXT_PUBLIC_HYGRAPH_ENDPOINT: ${{ secrets.NEXT_PUBLIC_HYGRAPH_ENDPOINT }}
             NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+      - name: Deploy
+        uses: ./
+        with:
+          local: test.txt
+          remote: websites/cieplydom/test.txt
+          host: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.PASSWORD }}
