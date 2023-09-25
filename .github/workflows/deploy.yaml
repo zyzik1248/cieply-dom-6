@@ -22,11 +22,10 @@ jobs:
         env:
             NEXT_PUBLIC_HYGRAPH_ENDPOINT: ${{ secrets.NEXT_PUBLIC_HYGRAPH_ENDPOINT }}
             NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-      - name: Deploy
-        uses: actions/checkout@v4
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          local: test.txt
-          remote: ./websites/cieplydom/test.txt
-          host: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.PASSWORD }}
+          server: zieloneparafie.atthost24.pl
+          username: zieloneparafie_cieplydom_github_action
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
