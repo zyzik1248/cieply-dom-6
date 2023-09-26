@@ -2,7 +2,11 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "export-static" ]
+    branches: [main, export-static]
+  pull_request:
+    branches: [main]
+  repository_dispatch:
+    types: [publish-event]
 
 jobs:
   build:
@@ -23,9 +27,13 @@ jobs:
             NEXT_PUBLIC_HYGRAPH_ENDPOINT: ${{ secrets.NEXT_PUBLIC_HYGRAPH_ENDPOINT }}
             NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@8a24039354ee91000cb948cb4a1dbdf1a1b94a3c # v4.3.4
+        if: |
+          (github.event_name == 'push' && github.ref == 'refs/heads/export-static')
         with:
           server: zieloneparafie.atthost24.pl
           username: zieloneparafie_cieplydom_github_action
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
+
+          
